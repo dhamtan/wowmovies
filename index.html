@@ -3,24 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title id="dynamicTitle">WOWMOVIES - Watch Global Movies & Series</title>
-    
-    <meta name="description" content="Stream latest Bollywood, Hollywood, Russian, and Italian movies first on WOWMOVIES. The ultimate movie index.">
-    <meta name="keywords" content="movies, web-series, free streaming, hindi dubbed, russian movies, italian cinema, wowmovies pro">
-    <meta name="google-site-verification" content="ADD_YOUR_GOOGLE_CODE_HERE" />
-    <link rel="canonical" href="https://dhamtan.github.io/wowmovies/" />
-
+    <title id="dynamicTitle">WOWMOVIES - TV Channels & Webseries</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         body { background-color: #000; color: white; font-family: sans-serif; overflow-x: hidden; }
-        .p-card { transition: 0.3s; border: 1px solid #1f2937; cursor: pointer; border-radius: 1rem; overflow: hidden; background: #0b0f15; }
+        .p-card { transition: 0.3s; border: 1px solid #1f2937; cursor: pointer; border-radius: 1rem; overflow: hidden; background: #0b0f15; position: relative; }
         .p-card:hover { border-color: #fbbf24; transform: scale(1.05); box-shadow: 0 10px 30px rgba(251, 191, 36, 0.2); }
+        .star-rating { position: absolute; top: 10px; right: 10px; background: rgba(0,0,0,0.85); color: #fbbf24; padding: 3px 7px; border-radius: 8px; font-size: 10px; font-weight: 900; border: 1px solid #fbbf24; z-index: 10; }
         .sidebar { position: fixed; left: -300px; top: 0; width: 280px; height: 100%; background: #0b0f15; z-index: 200; transition: 0.4s; border-right: 1px solid #1f2937; padding: 25px; }
         .sidebar.active { left: 0; }
         .overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.85); z-index: 150; display: none; backdrop-filter: blur(5px); }
         .overlay.active { display: block; }
-        .modal { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.95); z-index: 400; align-items: center; justify-content: center; padding: 20px; }
-        .modal.active { display: flex; }
         .no-scrollbar::-webkit-scrollbar { display: none; }
     </style>
 </head>
@@ -32,8 +25,8 @@
         <h2 class="text-3xl font-black text-yellow-500 mb-10 italic">WOWMOVIES</h2>
         <ul class="space-y-6 font-bold uppercase text-[11px] tracking-widest">
             <li class="hover:text-yellow-500 cursor-pointer" onclick="setMode('movie')">🎬 Movies</li>
-            <li class="hover:text-yellow-500 cursor-pointer" onclick="setMode('tv')">📺 Series</li>
-            <li class="hover:text-yellow-500 cursor-pointer" onclick="openModal('aboutModal')">ℹ️ About Us</li>
+            <li class="hover:text-yellow-500 cursor-pointer" onclick="setMode('tv')">📺 TV CHANNEL</li>
+            <li class="hover:text-yellow-500 cursor-pointer text-yellow-500" onclick="setMode('tv')">🔥 WEBSERIES</li>
             <li class="hover:text-yellow-500 cursor-pointer text-blue-400"><a href="mailto:help.wowmovies@gmail.com">📩 Help Email</a></li>
         </ul>
     </div>
@@ -44,28 +37,24 @@
                 <button onclick="toggleMenu()" class="text-yellow-500 text-3xl">☰</button>
                 <h1 class="text-2xl font-black text-yellow-500 tracking-tighter cursor-pointer" onclick="location.reload()">WOWMOVIES</h1>
             </div>
-            <div class="text-[9px] font-bold text-green-500">LIVE USERS: <span id="userCount">3,720</span></div>
+            <div class="text-[9px] font-bold text-green-500 uppercase">Live Stats: <span id="userCount">4,215</span></div>
         </div>
     </header>
 
     <nav class="bg-black p-4 flex gap-3 overflow-x-auto border-b border-gray-900 no-scrollbar">
-        <button onclick="setLang('hi-IN')" class="whitespace-nowrap px-6 py-2 bg-yellow-500 text-black rounded-full font-black text-[9px]">HINDI</button>
-        <button onclick="setLang('en-US')" class="whitespace-nowrap px-6 py-2 border border-gray-800 rounded-full font-black text-[9px]">ENGLISH</button>
-        <button onclick="setLang('te-IN')" class="whitespace-nowrap px-6 py-2 border border-gray-800 rounded-full font-black text-[9px]">SOUTH</button>
-        <button onclick="setLang('ru-RU')" class="whitespace-nowrap px-6 py-2 border border-blue-500 rounded-full font-black text-[9px]">RUSSIAN</button>
-        <button onclick="setLang('it-IT')" class="whitespace-nowrap px-6 py-2 border border-green-500 rounded-full font-black text-[9px]">ITALIAN</button>
-        <button onclick="setLang('pa-IN')" class="whitespace-nowrap px-6 py-2 border border-gray-800 rounded-full font-black text-[9px]">PUNJABI</button>
-        <button onclick="setLang('bho-IN')" class="whitespace-nowrap px-6 py-2 border border-gray-800 rounded-full font-black text-[9px]">BHOJPURI</button>
+        <button onclick="setMode('movie')" class="whitespace-nowrap px-8 py-2 bg-yellow-500 text-black rounded-full font-black text-[10px]">MOVIES</button>
+        <button onclick="setMode('tv')" class="whitespace-nowrap px-8 py-2 border border-yellow-500 text-yellow-500 rounded-full font-black text-[10px]">WEBSERIES</button>
+        <button onclick="setMode('tv')" class="whitespace-nowrap px-8 py-2 border border-gray-800 rounded-full font-black text-[10px]">TV CHANNEL</button>
+        <button onclick="setLang('hi-IN')" class="whitespace-nowrap px-6 py-2 border border-gray-800 rounded-full font-black text-[9px]">HINDI</button>
+        <button onclick="setLang('ru-RU')" class="whitespace-nowrap px-6 py-2 border border-gray-800 rounded-full font-black text-[9px]">RUSSIAN</button>
     </nav>
 
     <section class="max-w-4xl mx-auto px-6 mt-8">
-        <div class="relative">
-            <input id="searchInput" type="text" placeholder="Search any movie in any language..." class="w-full bg-gray-900 border-2 border-gray-800 rounded-2xl px-6 py-4 focus:border-yellow-500 outline-none">
-            <button onclick="searchContent()" class="absolute right-2 top-2 bg-yellow-500 text-black px-6 py-2 rounded-xl font-black">FIND</button>
-        </div>
+        <input id="searchInput" type="text" placeholder="Search latest movies or webseries..." class="w-full bg-gray-900 border-2 border-gray-800 rounded-2xl px-6 py-4 focus:border-yellow-500 outline-none">
     </section>
 
     <main class="max-w-7xl mx-auto p-6">
+        <h2 id="gridTitle" class="text-xl font-black text-yellow-500 uppercase italic mb-8 tracking-widest">🔥 Premium Global Index</h2>
         <div id="contentGrid" class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-8"></div>
         <div class="flex justify-center mt-12 mb-20">
             <button onclick="nextPage()" class="bg-gray-950 border border-gray-800 px-12 py-4 rounded-full font-black text-yellow-500 hover:bg-yellow-500 hover:text-black transition">LOAD MORE</button>
@@ -76,35 +65,23 @@
         <div class="w-full max-w-5xl">
             <div class="flex justify-between items-center mb-4">
                 <h3 id="playTitle" class="text-lg font-black text-yellow-500 uppercase"></h3>
-                <button onclick="closePlayer()" class="bg-red-600 px-6 py-2 rounded-full font-bold text-xs">CLOSE ×</button>
+                <button onclick="closePlayer()" class="bg-red-600 px-6 py-2 rounded-full font-bold text-xs uppercase">CLOSE ×</button>
             </div>
-            <div class="aspect-video rounded-3xl overflow-hidden border border-gray-800">
+            <div class="aspect-video rounded-3xl overflow-hidden border border-gray-800 bg-black">
                 <iframe id="videoFrame" class="w-full h-full" allowfullscreen allow="autoplay"></iframe>
             </div>
-            <div class="mt-6 flex justify-center gap-3">
-                <button onclick="changeServer(1)" class="px-6 py-2 bg-yellow-500 text-black rounded-lg font-bold text-xs">Server 1</button>
-                <button onclick="changeServer(2)" class="px-6 py-2 bg-gray-800 rounded-lg font-bold text-xs">Server 2</button>
-                <button onclick="changeServer(3)" class="px-6 py-2 bg-blue-600 rounded-lg font-bold text-xs">Server 3 (Universal Fix)</button>
+            <div class="mt-8 flex flex-wrap justify-center gap-3">
+                <button onclick="watchTrailer()" class="px-6 py-3 bg-white text-black rounded-xl font-black text-xs uppercase flex items-center gap-2">▶ Watch Trailer</button>
+                <button onclick="changeServer(1)" class="px-6 py-3 bg-yellow-500 text-black rounded-xl font-black text-xs uppercase">Server 1</button>
+                <button onclick="changeServer(2)" class="px-6 py-3 bg-gray-800 rounded-xl font-black text-xs uppercase border border-gray-700">Server 2</button>
+                <button onclick="changeServer(3)" class="px-6 py-3 bg-blue-600 rounded-xl font-black text-xs uppercase italic">Direct Fix</button>
             </div>
         </div>
     </div>
 
-    <div id="aboutModal" class="modal">
-        <div class="bg-gray-900 p-8 rounded-3xl max-w-lg border border-gray-800">
-            <h2 class="text-2xl font-black text-yellow-500 mb-4 italic uppercase">About WOWMOVIES</h2>
-            <p class="text-gray-400 text-xs leading-loose mb-6">
-                WOWMOVIES indexing service for Cinema Lovers. We provide metadata links for global content in 7+ languages. We do not host files.
-            </p>
-            <button onclick="closeModal('aboutModal')" class="w-full bg-yellow-500 text-black py-3 rounded-xl font-black">CLOSE</button>
-        </div>
-    </div>
-
-    <footer class="bg-gray-950 p-10 mt-20 border-t border-gray-900 text-center">
-        <div class="flex flex-wrap justify-center gap-6 text-[10px] font-bold text-gray-500 uppercase mb-6">
-            <span>Fair Use</span> <span>Terms & Conditions</span> <span>Privacy Policy</span>
-            <a href="mailto:help.wowmovies@gmail.com" class="text-yellow-500 font-black italic">Email: help.wowmovies@gmail.com</a>
-        </div>
-        <p class="text-[8px] text-gray-700 tracking-[3px]">© 2026 WOWMOVIES GLOBAL INDEX</p>
+    <footer class="bg-gray-950 p-10 mt-20 border-t border-gray-900 text-center text-gray-500 text-[10px] font-bold">
+        <div class="mb-4 text-yellow-500">Contact: help.wowmovies@gmail.com</div>
+        <div>© 2026 WOWMOVIES PREMIUM INDEX</div>
     </footer>
 
     <script>
@@ -112,55 +89,68 @@
         let currentMode = 'movie', currentLang = 'hi-IN', page = 1, activeID = '';
 
         function toggleMenu() { document.getElementById('sidebar').classList.toggle('active'); document.getElementById('overlay').classList.toggle('active'); }
-        function openModal(id) { document.getElementById(id).classList.add('active'); }
-        function closeModal(id) { document.getElementById(id).classList.remove('active'); }
         function closePlayer() { document.getElementById('playerBox').classList.add('hidden'); document.getElementById('videoFrame').src = ''; }
 
         function changeServer(num) {
             const frame = document.getElementById('videoFrame');
-            // Global Servers for all languages
             if (num === 1) frame.src = `https://vidsrc.me/embed/${currentMode}?tmdb=${activeID}`;
             if (num === 2) frame.src = `https://vidsrc.to/embed/${currentMode}/${activeID}`;
             if (num === 3) frame.src = `https://autoembed.to/embed/${currentMode}/${activeID}`;
         }
 
-        async function fetchContent(p = 1, q = '', append = false) {
-            // Global Search Logic: If query exists, it searches globally without language restriction
-            let url = q ? `https://api.themoviedb.org/3/search/${currentMode}?api_key=${API_KEY}&query=${encodeURIComponent(q)}&page=${p}&include_adult=false`
-                        : `https://api.themoviedb.org/3/discover/${currentMode}?api_key=${API_KEY}&language=${currentLang}&page=${p}&sort_by=popularity.desc&with_original_language=${currentLang.split('-')[0]}`;
-            
+        async function watchTrailer() {
             try {
-                const res = await fetch(url);
+                const res = await fetch(`https://api.themoviedb.org/3/${currentMode}/${activeID}/videos?api_key=${API_KEY}`);
                 const data = await res.json();
-                const grid = document.getElementById('contentGrid');
-                if(!append) grid.innerHTML = '';
-                
-                data.results.forEach((item) => {
-                    if(item.poster_path) {
-                        const div = document.createElement('div');
-                        div.className = 'p-card p-2';
-                        div.onclick = () => {
-                            activeID = item.id;
-                            document.getElementById('playerBox').classList.remove('hidden');
-                            document.getElementById('playTitle').innerText = item.title || item.name;
-                            document.getElementById('dynamicTitle').innerText = `Watch ${item.title || item.name} Free`;
-                            changeServer(1);
-                        };
-                        div.innerHTML = `<img src="https://image.tmdb.org/t/p/w500${item.poster_path}" class="w-full h-auto rounded-xl mb-2" loading="lazy">
-                                         <h4 class="text-[9px] font-black text-center truncate px-2 uppercase">${item.title || item.name}</h4>`;
-                        grid.appendChild(div);
-                    }
-                });
-            } catch (e) { console.error("Data fetch error"); }
+                const trailer = data.results.find(v => v.type === 'Trailer' && v.site === 'YouTube');
+                if (trailer) {
+                    document.getElementById('videoFrame').src = `https://www.youtube.com/embed/${trailer.key}?autoplay=1`;
+                } else { alert("Trailer not found for this title!"); }
+            } catch (e) { alert("Trailer service unavailable."); }
         }
 
-        function setMode(m) { currentMode = m; page = 1; fetchContent(); if(document.getElementById('sidebar').classList.contains('active')) toggleMenu(); }
+        async function fetchContent(p = 1, q = '', append = false) {
+            let url = q ? `https://api.themoviedb.org/3/search/${currentMode}?api_key=${API_KEY}&query=${encodeURIComponent(q)}&page=${p}`
+                        : `https://api.themoviedb.org/3/discover/${currentMode}?api_key=${API_KEY}&language=${currentLang}&page=${p}&sort_by=popularity.desc`;
+            
+            const res = await fetch(url);
+            const data = await res.json();
+            const grid = document.getElementById('contentGrid');
+            if(!append) grid.innerHTML = '';
+            
+            data.results.forEach((item) => {
+                if(item.poster_path) {
+                    const div = document.createElement('div');
+                    div.className = 'p-card p-2';
+                    div.onclick = () => {
+                        activeID = item.id;
+                        document.getElementById('playerBox').classList.remove('hidden');
+                        document.getElementById('playTitle').innerText = item.title || item.name;
+                        changeServer(1);
+                    };
+                    const rating = item.vote_average ? item.vote_average.toFixed(1) : '8.0';
+                    div.innerHTML = `
+                        <div class="star-rating">★ ${rating}</div>
+                        <img src="https://image.tmdb.org/t/p/w500${item.poster_path}" class="w-full h-auto rounded-xl mb-2">
+                        <h4 class="text-[9px] font-black text-center truncate px-2 uppercase">${item.title || item.name}</h4>`;
+                    grid.appendChild(div);
+                }
+            });
+        }
+
+        function setMode(m) { 
+            currentMode = m; page = 1; 
+            document.getElementById('gridTitle').innerText = m === 'tv' ? '🔥 Latest Webseries & Channels' : '🔥 Trending Movies';
+            fetchContent(); 
+            if(document.getElementById('sidebar').classList.contains('active')) toggleMenu(); 
+        }
+
         function setLang(l) { currentLang = l; page = 1; fetchContent(); }
-        function searchContent() { const q = document.getElementById('searchInput').value; if(q) { page = 1; fetchContent(1, q); } }
+        function searchContent() { const q = document.getElementById('searchInput').value; if(q) fetchContent(1, q); }
         function nextPage() { page++; fetchContent(page, document.getElementById('searchInput').value, true); }
         
         window.onload = () => fetchContent();
-        setInterval(() => { document.getElementById('userCount').innerText = (Math.floor(Math.random() * 500) + 3800).toLocaleString(); }, 5000);
+        setInterval(() => { document.getElementById('userCount').innerText = (Math.floor(Math.random() * 500) + 4200).toLocaleString(); }, 5000);
         document.getElementById('searchInput').onkeypress = (e) => { if(e.key === 'Enter') searchContent(); };
     </script>
 </body>
