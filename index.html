@@ -3,45 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pri Movies - Premium Index</title>
-    <meta name="monetag" content="582141df90453303893325785f76274b">
+    <title>Pri Movies - Universe Portal</title>
     
+    <meta name="monetag" content="582141df90453303893325785f76274b">
+
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        /* AAPKA PURANA STYLE (BILKUL WAHI HAI) */
-        * { -webkit-tap-highlight-color: transparent; }
-        body { background-color: #010; color: white; font-family: sans-serif; overflow-x: hidden; margin: 0; }
-        .p-card { border: 1px solid #1f2937; cursor: pointer; border-radius: 1rem; overflow: hidden; background: #0b0f15; }
-        .star-rating { position: absolute; top: 8px; left: 8px; background: rgba(0,0,0,0.85); color: #fbbf24; padding: 2px 6px; border-radius: 6px; font-size: 10px; font-weight: bold; }
-        .sidebar { position: fixed; left: -300px; top: 0; width: 280px; height: 100%; background: #0b0f15; z-index: 200; transition: all 0.3s; box-shadow: 10px 0 30px rgba(0,0,0,0.5); }
-        .sidebar.active { left: 0; }
-        .overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.8); z-index: 150; display: none; backdrop-filter: blur(4px); }
-        .overlay.active { display: block; }
-        .ad-space { width: 100%; text-align: center; margin: 15px 0; background: #0a0a0a; border: 1px dashed #333; color: white; min-height: 90px; display: flex; align-items: center; justify-content: center; }
+        .p-card { transition: 0.4s; border: 1px solid #1f2937; cursor: pointer; border-radius: 2rem; overflow: hidden; }
+        .p-card:hover { border-color: #fbbf24; transform: translateY(-10px); box-shadow: 0 20px 40px rgba(251, 191, 36, 0.3); }
         .no-scrollbar::-webkit-scrollbar { display: none; }
+        .ai-glow { box-shadow: 0 0 60px rgba(251, 191, 36, 0.3); border: 2px solid #fbbf24; }
+        .ad-space { width: 100%; text-align: center; margin: 15px 0; min-height: 90px; display: flex; align-items: center; justify-content: center; background: #0a0a0a; border-radius: 15px; overflow: hidden; }
     </style>
 </head>
-<body>
+<body class="bg-black text-white selection:bg-yellow-500">
 
-    <script>const blacklist = [];</script>
-    <div id="overlay" class="overlay" onclick="toggleMenu()"></div>
-
-    <div id="sidebar" class="sidebar no-scrollbar p-6">
-        <h2 class="text-3xl font-black text-yellow-500 mb-8 italic uppercase">Pri Movies</h2>
-        <ul class="space-y-4 font-bold uppercase text-[10px] tracking-widest text-gray-300">
-            <li class="hover:text-white cursor-pointer" onclick="setMode('movie')">🎥 Movies</li>
-            <li class="hover:text-white cursor-pointer" onclick="setMode('tv')">📺 Webseries</li>
-            <li class="pt-4 border-t border-gray-800 text-yellow-500">Legal Info</li>
-            <li onclick="alert('ABOUT: Pri Movies Indexing')">ℹ️ About Us</li>
-            <li onclick="alert('TERMS: Metadata Engine')">📜 Terms</li>
-            <li onclick="alert('DISCLAIMER: No files on server')" class="text-red-400">⚠️ Disclaimer</li>
-        </ul>
-    </div>
-
-    <header class="bg-black sticky top-0 z-50 p-4 border-b border-gray-900 flex justify-between items-center">
-        <div class="flex items-center gap-4">
-            <button onclick="toggleMenu()" class="text-yellow-500 text-3xl">≡</button>
-            <h1 class="text-2xl font-black text-yellow-500 tracking-tighter">Pri Movies</h1>
+    <header class="bg-gray-900/95 sticky top-0 z-50 p-4 border-b border-gray-800 backdrop-blur-xl">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <h1 class="text-3xl font-black text-yellow-500 tracking-tighter" onclick="location.reload()" style="cursor:pointer">🎬 PRI MOVIES</h1>
+            <button onclick="aiRecommend()" class="bg-yellow-500 text-black px-4 py-2 rounded-full font-black text-[10px] uppercase shadow-lg">✨ AI SMART PICK</button>
         </div>
     </header>
 
@@ -50,73 +30,93 @@
         <div id="container-745c1ef3a6af871203febf2e53f94208"></div>
     </div>
 
-    <section class="max-w-4xl mx-auto p-4 mt-6">
-        <input id="searchInput" type="text" placeholder="Search Pri Movies..." class="w-full bg-gray-900 border-2 border-gray-800 p-4 rounded-xl text-white focus:outline-none focus:border-yellow-500 transition-all">
+    <nav class="bg-black p-3 flex gap-3 overflow-x-auto no-scrollbar border-b border-gray-900 sticky top-[73px] z-40">
+        <button onclick="setLang('hi-IN')" class="text-[10px] font-black px-6 py-2 bg-yellow-500 text-black rounded-full whitespace-nowrap">HINDI</button>
+        <button onclick="setLang('en-US')" class="text-[10px] font-black px-6 py-2 border border-gray-800 rounded-full whitespace-nowrap">ENGLISH</button>
+        <button onclick="setLang('te-IN')" class="text-[10px] font-black px-6 py-2 border border-gray-800 rounded-full whitespace-nowrap">SOUTH</button>
+        <button onclick="setLang('pa-IN')" class="text-[10px] font-black px-6 py-2 border border-gray-800 rounded-full whitespace-nowrap">PUNJABI</button>
+    </nav>
+
+    <section class="max-w-4xl mx-auto px-6 mt-12 text-center">
+        <div class="relative">
+            <input id="searchInput" type="text" placeholder="मूवी का नाम लिखें..." class="w-full bg-gray-900 border-2 border-gray-800 rounded-3xl px-8 py-5 text-xl focus:border-yellow-500 outline-none transition-all">
+            <button onclick="searchMovies()" class="absolute right-3 top-3 bg-yellow-500 text-black px-8 py-2.5 rounded-2xl font-black uppercase">Search</button>
+        </div>
     </section>
 
-    <main class="max-w-7xl mx-auto p-4">
-        <h2 id="gridTitle" class="text-lg font-black text-yellow-500 uppercase italic mb-6">🔥 Top Trending</h2>
-        <div id="contentGrid" class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-6"></div>
+    <main class="max-w-7xl mx-auto p-6 min-h-screen mt-6">
+        <div id="movieGrid" class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-8"></div>
+        <div class="flex justify-center mt-20">
+            <button onclick="nextPage()" class="bg-gray-900 border border-gray-800 px-12 py-4 rounded-full font-black text-yellow-500">LOAD MORE</button>
+        </div>
     </main>
 
-    <div id="playerBox" class="fixed inset-0 bg-black z-[300] hidden flex-col items-center justify-center p-4">
-        <div class="w-full max-w-5xl text-center">
+    <div id="playerBox" class="fixed inset-0 bg-black/98 z-[100] hidden flex flex-col items-center justify-center p-4">
+        <div class="w-full max-w-5xl">
             <div class="flex justify-between items-center mb-4">
-                <h3 id="playTitle" class="text-sm font-black text-yellow-500 uppercase"></h3>
-                <button onclick="closePlayer()" class="bg-red-600 px-5 py-2 rounded-full font-black text-[10px] text-white">CLOSE ×</button>
+                <h3 id="playTitle" class="text-xl font-black text-yellow-500 uppercase truncate"></h3>
+                <button onclick="closePlayer()" class="bg-red-600 text-white px-8 py-2 rounded-full font-bold text-xs shadow-xl">CLOSE ×</button>
             </div>
-            <div class="aspect-video rounded-2xl overflow-hidden border border-gray-900">
-                <iframe id="videoFrame" class="w-full h-full" allowfullscreen></iframe>
+            <div class="aspect-video rounded-[2.5rem] overflow-hidden ai-glow bg-black">
+                <iframe id="videoFrame" class="w-full h-full" allowfullscreen allow="autoplay"></iframe>
             </div>
 
             <div class="ad-space" id="player-ad">
                 <script async="async" data-cfasync="false" src="https://pl28735283.effectivegatecpm.com/745c1ef3a6af871203febf2e53f94208/invoke.js"></script>
                 <div id="container-745c1ef3a6af871203febf2e53f94208"></div>
             </div>
+
+            <p class="mt-4 text-center text-[10px] text-gray-500 font-bold tracking-[0.4em] animate-pulse">STREAMING DATA CONNECTED • FAIR USE</p>
         </div>
     </div>
 
+    <footer class="p-16 border-t border-gray-900 mt-40 text-center bg-gray-950">
+        <p class="text-yellow-500 font-black mb-4 tracking-widest uppercase">Contact: help.primovies@gmail.com</p>
+        <p class="text-[10px] text-gray-700 max-w-xl mx-auto leading-relaxed">
+            DISCLAIMER: PRI MOVIES works on a non-hosting search engine model.
+        </p>
+    </footer>
+
     <script>
-        // AAPKA PURANA LOGIC (NO CHANGE)
-        const API_KEY = '174d0214bf333dd59b3d5ec68a0c967f';
-        let currentMode = 'movie';
+        const API_KEY = '174d0214bf933dd59b3d5ec68a0c967f';
+        let currentLang = 'hi-IN'; let page = 1; let movies = [];
 
-        function toggleMenu() {
-            document.getElementById('sidebar').classList.toggle('active');
-            document.getElementById('overlay').classList.toggle('active');
-        }
-
-        function closePlayer() {
-            document.getElementById('playerBox').classList.add('hidden');
-            document.getElementById('videoFrame').src = "";
-        }
-
-        async function fetchContent() {
-            const res = await fetch(`https://api.themoviedb.org/3/trending/${currentMode}/week?api_key=${API_KEY}`);
+        async function fetchMovies(p = 1, q = '', append = false) {
+            let url = q 
+                ? `https://api.themoviedb.org/3/search/movie?api_key=${API_KEY}&query=${encodeURIComponent(q)}&language=${currentLang}&page=${p}`
+                : `https://api.themoviedb.org/3/discover/movie?api_key=${API_KEY}&with_original_language=${currentLang.split('-')[0]}&page=${p}&language=${currentLang}&sort_by=popularity.desc`;
+            
+            const res = await fetch(url);
             const data = await res.json();
-            const grid = document.getElementById('contentGrid');
-            grid.innerHTML = "";
-            data.results.forEach(item => {
-                const div = document.createElement('div');
-                div.className = 'p-card p-1.5 relative';
-                div.innerHTML = `<div class="star-rating">★ ${item.vote_average.toFixed(1)}</div><img src="https://image.tmdb.org/t/p/w500${item.poster_path}" class="w-full h-full object-cover rounded-xl">`;
-                div.onclick = () => {
-                    document.getElementById('playTitle').innerText = item.title || item.name;
-                    document.getElementById('videoFrame').src = `https://vidsrc.me/embed/${currentMode}?tmdb=${item.id}`;
-                    document.getElementById('playerBox').classList.remove('hidden');
-                };
-                grid.appendChild(div);
+            movies = data.results;
+            const grid = document.getElementById('movieGrid');
+            if(!append) grid.innerHTML = '';
+            
+            data.results.forEach(m => {
+                if(m.poster_path) {
+                    const div = document.createElement('div');
+                    div.className = 'p-card bg-gray-900 p-3';
+                    div.onclick = () => {
+                        document.getElementById('playerBox').classList.remove('hidden');
+                        document.getElementById('playTitle').innerText = m.title;
+                        document.getElementById('videoFrame').src = `https://vidsrc.me/embed/movie?tmdb=${m.id}`;
+                    };
+                    div.innerHTML = `
+                        <img src="https://image.tmdb.org/t/p/w500${m.poster_path}" class="w-full h-64 md:h-72 object-cover rounded-[1.5rem] mb-3">
+                        <div class="text-center"><h4 class="text-[10px] font-black truncate">${m.title}</h4></div>`;
+                    grid.appendChild(div);
+                }
             });
         }
 
-        function setMode(mode) {
-            currentMode = mode;
-            document.getElementById('gridTitle').innerText = mode === 'movie' ? '🔥 Top Movies' : '🔥 Top Webseries';
-            fetchContent();
-            toggleMenu();
-        }
-
-        window.onload = fetchContent;
+        function setLang(l) { currentLang = l; page = 1; fetchMovies(1); }
+        function searchMovies() { const q = document.getElementById('searchInput').value; if(q) { page = 1; fetchMovies(1, q); } }
+        function nextPage() { page++; fetchMovies(page, document.getElementById('searchInput').value, true); }
+        function closePlayer() { document.getElementById('playerBox').classList.add('hidden'); document.getElementById('videoFrame').src = ''; }
+        function aiRecommend() { alert(`AI Pick: हमने आपके लिए "${movies[0].title}" चुनी है!`); }
+        
+        document.getElementById('searchInput').onkeypress = (e) => { if(e.key === 'Enter') searchMovies(); };
+        window.onload = () => fetchMovies();
     </script>
 </body>
 </html>
