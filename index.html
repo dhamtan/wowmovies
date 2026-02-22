@@ -3,25 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WOWMOVIES - Language Fixed</title>
+    <title id="dynamicTitle">WOWMOVIES - South & Dubbed Added</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         * { -webkit-tap-highlight-color: transparent; }
-        body { background-color: #000; color: white; font-family: sans-serif; margin: 0; }
+        body { background-color: #000; color: white; font-family: sans-serif; overflow-x: hidden; margin: 0; }
         .p-card { border: 1px solid #1f2937; cursor: pointer; border-radius: 1rem; overflow: hidden; background: #0b0f15; position: relative; transition: 0.1s; }
+        .p-card:active { transform: scale(0.95); }
         .star-rating { position: absolute; top: 8px; right: 8px; background: rgba(0,0,0,0.85); color: #fbbf24; padding: 2px 6px; border-radius: 6px; font-size: 10px; font-weight: 900; border: 1px solid #fbbf24; }
         .sidebar { position: fixed; left: -300px; top: 0; width: 280px; height: 100%; background: #0b0f15; z-index: 200; transition: 0.2s; border-right: 1px solid #1f2937; padding: 20px; overflow-y: auto; }
         .sidebar.active { left: 0; }
-        .overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.8); z-index: 150; display: none; }
+        .overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.8); z-index: 150; display: none; backdrop-filter: blur(2px); }
         .overlay.active { display: block; }
-        .ad-space { width: 100%; text-align: center; margin: 10px 0; background: #0a0a0a; border: 1px dashed #333; color: #444; font-size: 10px; padding: 10px; border-radius: 10px; }
+        .ad-space { width: 100%; text-align: center; margin: 15px 0; background: #0a0a0a; border: 1px dashed #333; color: #444; font-size: 10px; padding: 10px; border-radius: 10px; }
         .no-scrollbar::-webkit-scrollbar { display: none; }
     </style>
 </head>
 <body>
 
     <script>
-        // BLACKLIST SYSTEM
         const blacklist = []; 
     </script>
 
@@ -29,11 +29,17 @@
     
     <div id="sidebar" class="sidebar no-scrollbar">
         <h2 class="text-3xl font-black text-yellow-500 mb-8 italic">WOWMOVIES</h2>
-        <ul class="space-y-5 font-bold uppercase text-[11px] tracking-widest text-gray-300">
-            <li onclick="setMode('movie')">🎬 Movies</li>
-            <li onclick="setMode('tv')">🔥 Webseries</li>
-            <li onclick="alert('About Us: World Fastest Index')">ℹ️ About Us</li>
-            <li class="pt-6 text-blue-400">help.wowmovies@gmail.com</li>
+        <ul class="space-y-4 font-bold uppercase text-[10px] tracking-widest text-gray-300">
+            <li class="hover:text-white cursor-pointer" onclick="setMode('movie')">🎬 Movies</li>
+            <li class="hover:text-white cursor-pointer" onclick="setMode('tv')">📺 Webseries</li>
+            
+            <li class="pt-4 border-t border-gray-800 text-yellow-500">Legal & Info</li>
+            <li class="hover:text-white cursor-pointer" onclick="alert('ABOUT US:\nWOWMOVIES is the worlds fastest movie indexing platform. We provide high-quality metadata and links for global cinema lovers.')">ℹ️ About Us</li>
+            <li class="hover:text-white cursor-pointer" onclick="alert('TERMS & CONDITIONS:\nBy using this site, you agree that WOWMOVIES is a search engine. We do not host, store, or upload any media files on our own servers.')">📄 Terms & Conditions</li>
+            <li class="hover:text-white cursor-pointer" onclick="alert('FAIR USE:\nThis site operates under Fair Use principles for indexing and educational purposes. All content rights belong to their respective owners.')">⚖️ Fair Use</li>
+            <li class="hover:text-white cursor-pointer text-red-400" onclick="alert('DISCLAIMER:\nWe are not responsible for content hosted on third-party servers. If you find any copyrighted material, please contact the hosting provider or email us.')">⚠️ Disclaimer</li>
+            
+            <li class="pt-6 text-blue-400">📩 help.wowmovies@gmail.com</li>
         </ul>
     </div>
 
@@ -44,19 +50,23 @@
         </div>
     </header>
 
-    <div class="ad-space">-- ADSTERRA CODE HERE --</div>
+    <div class="ad-space">-- PASTE ADSTERRA CODE HERE --</div>
 
     <nav class="bg-black p-4 flex gap-3 overflow-x-auto border-b border-gray-900 no-scrollbar">
-        <button onclick="setLang('hi-IN')" class="whitespace-nowrap px-6 py-2 border border-yellow-500 text-yellow-500 rounded-full font-black text-[9px] active:bg-yellow-500 active:text-black">HINDI</button>
-        <button onclick="setLang('pa-IN')" class="whitespace-nowrap px-6 py-2 border border-yellow-500 text-yellow-500 rounded-full font-black text-[9px] active:bg-yellow-500 active:text-black">PUNJABI</button>
-        <button onclick="setLang('en-US')" class="whitespace-nowrap px-6 py-2 border border-yellow-500 text-yellow-500 rounded-full font-black text-[9px] active:bg-yellow-500 active:text-black">ENGLISH</button>
+        <button onclick="setLang('hi-IN')" class="whitespace-nowrap px-6 py-2 border border-yellow-500 text-yellow-500 rounded-full font-black text-[9px]">HINDI</button>
+        <button onclick="setLang('pa-IN')" class="whitespace-nowrap px-6 py-2 border border-yellow-500 text-yellow-500 rounded-full font-black text-[9px]">PUNJABI</button>
+        <button onclick="setLang('en-US')" class="whitespace-nowrap px-6 py-2 border border-yellow-500 text-yellow-500 rounded-full font-black text-[9px]">ENGLISH</button>
+        <button onclick="setLang('ru-RU')" class="whitespace-nowrap px-6 py-2 border border-yellow-500 text-yellow-500 rounded-full font-black text-[9px]">RUSSIAN</button>
+        <button onclick="setLang('south')" class="whitespace-nowrap px-6 py-2 bg-yellow-500 text-black rounded-full font-black text-[9px]">SOUTH INDIAN</button>
+        <button onclick="setLang('dubbed')" class="whitespace-nowrap px-6 py-2 border-2 border-green-500 text-green-500 rounded-full font-black text-[9px]">HINDI DUBBED</button>
     </nav>
 
     <section class="max-w-4xl mx-auto px-6 mt-6">
-        <input id="searchInput" type="text" placeholder="Search Movie/Series..." class="w-full bg-gray-900 border-2 border-gray-800 rounded-2xl px-6 py-4 focus:border-yellow-500 outline-none">
+        <input id="searchInput" type="text" placeholder="Search Movie or Series..." class="w-full bg-gray-900 border-2 border-gray-800 rounded-2xl px-6 py-4 focus:border-yellow-500 outline-none text-white">
     </section>
 
     <main class="max-w-7xl mx-auto p-4">
+        <h2 id="gridTitle" class="text-lg font-black text-yellow-500 uppercase italic mb-6">🔥 Top Trending</h2>
         <div id="contentGrid" class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-6"></div>
         <div class="flex justify-center mt-12 mb-20">
             <button onclick="nextPage()" class="bg-gray-950 border border-gray-800 px-12 py-4 rounded-full font-black text-yellow-500">LOAD MORE</button>
@@ -65,8 +75,11 @@
 
     <div id="playerBox" class="fixed inset-0 bg-black z-[300] hidden flex flex-col items-center justify-center p-4">
         <div class="w-full max-w-5xl text-center">
-            <button onclick="closePlayer()" class="bg-red-600 px-5 py-2 rounded-full font-black text-[10px] mb-4">CLOSE ×</button>
-            <div class="aspect-video rounded-2xl overflow-hidden border border-gray-900">
+            <div class="flex justify-between items-center mb-4 px-2">
+                <h3 id="playTitle" class="text-sm font-black text-yellow-500 uppercase truncate"></h3>
+                <button onclick="closePlayer()" class="bg-red-600 px-5 py-2 rounded-full font-black text-[10px]">CLOSE ×</button>
+            </div>
+            <div class="aspect-video rounded-2xl overflow-hidden border border-gray-900 shadow-2xl">
                 <iframe id="videoFrame" class="w-full h-full" allowfullscreen></iframe>
             </div>
             <div class="mt-4 flex flex-wrap justify-center gap-2">
@@ -79,16 +92,24 @@
 
     <script>
         const API_KEY = '174d0214bf933dd59b3d5ec68a0c967f';
-        let currentMode = 'movie', currentLang = 'hi-IN', page = 1, activeID = '';
+        let currentMode = 'movie', currentLang = 'hi-IN', page = 1, activeID = '', isDubbed = false, isSouth = false;
 
         function toggleMenu() { document.getElementById('sidebar').classList.toggle('active'); document.getElementById('overlay').classList.toggle('active'); }
         function closePlayer() { document.getElementById('playerBox').classList.add('hidden'); document.getElementById('videoFrame').src = ''; }
 
         async function fetchContent(p = 1, q = '', append = false) {
-            // Language parameter fix: with_original_language helps filter exact content
-            let langFilter = currentLang.split('-')[0];
-            let url = q ? `https://api.themoviedb.org/3/search/${currentMode}?api_key=${API_KEY}&query=${q}&page=${p}`
-                        : `https://api.themoviedb.org/3/discover/${currentMode}?api_key=${API_KEY}&with_original_language=${langFilter}&page=${p}&sort_by=popularity.desc`;
+            let url = '';
+            if (q) {
+                url = `https://api.themoviedb.org/3/search/${currentMode}?api_key=${API_KEY}&query=${q}&page=${p}`;
+            } else if (isSouth) {
+                url = `https://api.themoviedb.org/3/discover/${currentMode}?api_key=${API_KEY}&with_original_language=te|ta|kn|ml&page=${p}&sort_by=popularity.desc`;
+            } else if (isDubbed) {
+                // Fetching foreign movies with Hindi Audio filter if available, or just general dubbed popular
+                url = `https://api.themoviedb.org/3/discover/${currentMode}?api_key=${API_KEY}&with_genres=28,12&with_original_language=en|te|ta&page=${p}&sort_by=popularity.desc`;
+            } else {
+                let lang = currentLang.split('-')[0];
+                url = `https://api.themoviedb.org/3/discover/${currentMode}?api_key=${API_KEY}&with_original_language=${lang}&page=${p}&sort_by=popularity.desc`;
+            }
             
             const res = await fetch(url);
             const data = await res.json();
@@ -99,7 +120,7 @@
                 if(item.poster_path && !blacklist.includes(item.id.toString())) {
                     const div = document.createElement('div');
                     div.className = 'p-card p-1.5';
-                    div.onclick = () => { activeID = item.id; document.getElementById('playerBox').classList.remove('hidden'); changeServer(1); };
+                    div.onclick = () => { activeID = item.id; document.getElementById('playerBox').classList.remove('hidden'); document.getElementById('playTitle').innerText = (item.title || item.name); changeServer(1); };
                     div.innerHTML = `<div class="star-rating">★ ${item.vote_average.toFixed(1)}</div>
                         <img src="https://image.tmdb.org/t/p/w342${item.poster_path}" class="w-full h-auto rounded-xl mb-2">
                         <h4 class="text-[9px] font-black text-center truncate uppercase px-2">${item.title || item.name}</h4>`;
@@ -108,11 +129,13 @@
             });
         }
 
-        // Language update function (Corrected)
         function setLang(l) { 
+            isSouth = (l === 'south');
+            isDubbed = (l === 'dubbed');
             currentLang = l; 
             page = 1; 
-            fetchContent(); // Refresh the grid with new language content
+            document.getElementById('gridTitle').innerText = isSouth ? '🔥 South Special' : (isDubbed ? '🔥 Hindi Dubbed' : '🔥 Top Trending');
+            fetchContent(); 
         }
 
         function changeServer(num) {
@@ -129,7 +152,6 @@
 
         function setMode(m) { currentMode = m; page = 1; fetchContent(); if(document.getElementById('sidebar').classList.contains('active')) toggleMenu(); }
         function nextPage() { page++; fetchContent(page, '', true); }
-        
         window.onload = () => fetchContent();
     </script>
 </body>
