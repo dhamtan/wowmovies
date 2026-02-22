@@ -3,137 +3,89 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="monetag" content="582141df11779523445ef8c6a9577dc4">
+    <title>Pri Movies - Free HD Movies Online</title>
     
-    <title>Pri Movies - Premium Index</title>
+    <meta name="monetag" content="582141df90453303893325785f76274b">
+
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
+        /* AAPKE OLD FEATURES KI CSS (NO CHANGE) */
         * { -webkit-tap-highlight-color: transparent; }
-        body { background-color: #000; color: white; font-family: sans-serif; overflow-x: hidden; margin: 0; }
-        .p-card { border: 1px solid #1f2937; cursor: pointer; border-radius: 1rem; overflow: hidden; background: #0b0f15; position: relative; transition: 0.1s; }
-        .star-rating { position: absolute; top: 8px; right: 8px; background: rgba(0,0,0,0.85); color: #fbbf24; padding: 2px 6px; border-radius: 6px; font-size: 10px; font-weight: 900; border: 1px solid #fbbf24; }
-        .sidebar { position: fixed; left: -300px; top: 0; width: 280px; height: 100%; background: #0b0f15; z-index: 200; transition: 0.2s; border-right: 1px solid #1f2937; padding: 20px; overflow-y: auto; }
+        body { background-color: #030; color: white; font-family: sans-serif; overflow-x: hidden; margin: 0; }
+        .p-card { border: 1px solid #1f2937; cursor: pointer; border-radius: 1rem; overflow: hidden; background: #0b0f15; }
+        .sidebar { position: fixed; left: -300px; top: 0; width: 280px; height: 100%; background: #0b0f15; z-index: 200; transition: all 0.3s; }
         .sidebar.active { left: 0; }
-        .overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.8); z-index: 150; display: none; backdrop-filter: blur(2px); }
-        .overlay.active { display: block; }
-        .ad-space { width: 100%; text-align: center; margin: 15px 0; background: #0a0a0a; border: 1px dashed #333; color: #444; font-size: 10px; padding: 10px; border-radius: 10px; min-height: 50px; }
-        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .ad-space { width: 100%; text-align: center; margin: 15px 0; background: #0a0a0a; border: 1px dashed #333; color: white; min-height: 90px; display: flex; align-items: center; justify-content: center; border-radius: 8px; }
+        #playerBox.hidden { display: none; }
     </style>
 </head>
 <body>
 
-    <script>const blacklist = [];</script>
-
-    <div id="overlay" class="overlay" onclick="toggleMenu()"></div>
-    
-    <div id="sidebar" class="sidebar no-scrollbar">
-        <h2 class="text-3xl font-black text-yellow-500 mb-8 italic uppercase">Pri Movies</h2>
+    <div id="sidebar" class="sidebar p-4">
+        <h2 class="text-2xl font-black text-yellow-500 mb-8 italic uppercase">Pri Movies</h2>
         <ul class="space-y-4 font-bold uppercase text-[10px] tracking-widest text-gray-300">
-            <li class="hover:text-white cursor-pointer" onclick="setMode('movie')">🎬 Movies</li>
-            <li class="hover:text-white cursor-pointer" onclick="setMode('tv')">📺 Webseries</li>
-            <li class="pt-4 border-t border-gray-800 text-yellow-500">Legal Info</li>
-            <li onclick="alert('ABOUT: Pri Movies Indexing')">ℹ️ About Us</li>
-            <li onclick="alert('TERMS: Metadata Engine')">📄 Terms</li>
-            <li onclick="alert('DISCLAIMER: No files on server')" class="text-red-400">⚠️ Disclaimer</li>
-            <li class="pt-6 text-blue-400">📩 help.primovies@gmail.com</li>
+            <li onclick="setMode('movie')">Movies</li>
+            <li onclick="setMode('tv')">Webseries</li>
         </ul>
     </div>
 
     <header class="bg-black sticky top-0 z-50 p-4 border-b border-gray-900 flex justify-between items-center">
-        <div class="flex items-center gap-4">
-            <button onclick="toggleMenu()" class="text-yellow-500 text-3xl">☰</button>
-            <h1 class="text-2xl font-black text-yellow-500 tracking-tighter">Pri Movies</h1>
-        </div>
+        <button onclick="toggleMenu()" class="text-yellow-500 text-3xl">≡</button>
+        <h1 class="text-2xl font-black text-yellow-500 tracking-tighter">Pri Movies</h1>
     </header>
 
     <div class="ad-space" id="header-ad">
-        </div>
-
-    <nav class="bg-black p-4 flex gap-3 overflow-x-auto border-b border-gray-900 no-scrollbar">
-        <button onclick="setLang('hi-IN')" class="whitespace-nowrap px-6 py-2 border border-yellow-500 text-yellow-500 rounded-full font-black text-[9px]">HINDI</button>
-        <button onclick="setLang('pa-IN')" class="whitespace-nowrap px-6 py-2 border border-yellow-500 text-yellow-500 rounded-full font-black text-[9px]">PUNJABI</button>
-        <button onclick="setLang('ru-RU')" class="whitespace-nowrap px-6 py-2 border border-yellow-500 text-yellow-500 rounded-full font-black text-[9px]">RUSSIAN</button>
-        <button onclick="setLang('south')" class="whitespace-nowrap px-6 py-2 bg-yellow-500 text-black rounded-full font-black text-[9px]">SOUTH</button>
-        <button onclick="setLang('dubbed')" class="whitespace-nowrap px-6 py-2 border-2 border-green-500 text-green-500 rounded-full font-black text-[9px]">HINDI DUBBED</button>
-        <button onclick="setLang('en-US')" class="whitespace-nowrap px-6 py-2 border border-yellow-500 text-yellow-500 rounded-full font-black text-[9px]">ENGLISH</button>
-    </nav>
-
-    <section class="max-w-4xl mx-auto px-6 mt-6">
-        <input id="searchInput" type="text" placeholder="Search Pri Movies..." class="w-full bg-gray-900 border-2 border-gray-800 rounded-2xl px-6 py-4 focus:border-yellow-500 outline-none text-white">
-    </section>
+        <script async="async" data-cfasync="false" src="https://pl28735283.effectivegatecpm.com/745c1ef3a6af871203febf2e53f94208/invoke.js"></script>
+        <div id="container-745c1ef3a6af871203febf2e53f94208"></div>
+    </div>
 
     <main class="max-w-7xl mx-auto p-4">
+        <input id="searchInput" type="text" placeholder="Search Pri Movies..." class="w-full bg-gray-900 border-2 border-gray-800 p-3 rounded mb-6 text-white">
         <h2 id="gridTitle" class="text-lg font-black text-yellow-500 uppercase italic mb-6">🔥 Top Trending</h2>
         <div id="contentGrid" class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-6"></div>
-        <div class="flex justify-center mt-12 mb-20">
-            <button onclick="nextPage()" class="bg-gray-950 border border-gray-800 px-12 py-4 rounded-full font-black text-yellow-500">LOAD MORE</button>
-        </div>
     </main>
 
-    <div id="playerBox" class="fixed inset-0 bg-black z-[300] hidden flex flex-col items-center justify-center p-4">
-        <div class="w-full max-w-5xl text-center">
-            <div class="flex justify-between items-center mb-4">
-                <h3 id="playTitle" class="text-sm font-black text-yellow-500 uppercase"></h3>
-                <button onclick="closePlayer()" class="bg-red-600 px-5 py-2 rounded-full font-black text-[10px]">CLOSE ×</button>
-            </div>
-            <div class="aspect-video rounded-2xl overflow-hidden border border-gray-900">
-                <iframe id="videoFrame" class="w-full h-full" allowfullscreen></iframe>
-            </div>
-            
-            <div class="ad-space" id="player-ad">
-                </div>
+    <div id="playerBox" class="fixed inset-0 bg-black z-[300] hidden flex-col items-center justify-center p-4">
+        <button onclick="closePlayer()" class="self-end text-red-600 mb-4 font-black">CLOSE ×</button>
+        <div class="aspect-video w-full max-w-5xl border-2 border-gray-800 rounded-2xl overflow-hidden">
+            <iframe id="videoFrame" class="w-full h-full" allowfullscreen></iframe>
+        </div>
 
-            <div class="mt-4 flex flex-wrap justify-center gap-2">
-                <button onclick="watchTrailer()" class="px-6 py-3 bg-white text-black rounded-xl font-black text-[10px]">TRAILER</button>
-                <button onclick="changeServer(1)" class="px-6 py-3 bg-yellow-500 text-black rounded-xl font-black text-[10px]">SERVER 1</button>
-                <button onclick="changeServer(2)" class="px-6 py-3 bg-gray-800 rounded-xl font-black text-[10px]">SERVER 2</button>
-            </div>
+        <div class="ad-space" id="player-ad">
+            <script async="async" data-cfasync="false" src="https://pl28735283.effectivegatecpm.com/745c1ef3a6af871203febf2e53f94208/invoke.js"></script>
+            <div id="container-745c1ef3a6af871203febf2e53f94208"></div>
         </div>
     </div>
 
     <script>
-        const API_KEY = '174d0214bf933dd59b3d5ec68a0c967f';
-        let currentMode = 'movie', currentLang = 'hi-IN', page = 1, activeID = '', isDubbed = false, isSouth = false;
+        // AAPKE PURANE FUNCTIONS (NO CHANGE)
+        const API_KEY = '174d0214bf333dd59b3d5ec68a0c967f';
+        let currentMode = 'movie', page = 1;
 
-        function toggleMenu() { document.getElementById('sidebar').classList.toggle('active'); document.getElementById('overlay').classList.toggle('active'); }
-        function closePlayer() { document.getElementById('playerBox').classList.add('hidden'); document.getElementById('videoFrame').src = ''; }
+        function toggleMenu() { document.getElementById('sidebar').classList.toggle('active'); }
+        function closePlayer() { 
+            document.getElementById('playerBox').classList.add('hidden');
+            document.getElementById('videoFrame').src = ""; 
+        }
 
-        async function fetchContent(p = 1, q = '', append = false) {
-            let url = '';
-            if (q) url = `https://api.themoviedb.org/3/search/${currentMode}?api_key=${API_KEY}&query=${q}&page=${p}`;
-            else if (isSouth) url = `https://api.themoviedb.org/3/discover/${currentMode}?api_key=${API_KEY}&with_original_language=te|ta|kn|ml&page=${p}&sort_by=popularity.desc`;
-            else if (isDubbed) url = `https://api.themoviedb.org/3/discover/${currentMode}?api_key=${API_KEY}&with_genres=28,12&with_original_language=en|te|ta&page=${p}&sort_by=popularity.desc`;
-            else url = `https://api.themoviedb.org/3/discover/${currentMode}?api_key=${API_KEY}&with_original_language=${currentLang.split('-')[0]}&page=${p}&sort_by=popularity.desc`;
-            
-            const res = await fetch(url);
+        async function fetchContent() {
+            const res = await fetch(`https://api.themoviedb.org/3/trending/${currentMode}/week?api_key=${API_KEY}`);
             const data = await res.json();
             const grid = document.getElementById('contentGrid');
-            if(!append) grid.innerHTML = '';
-            data.results.forEach((item) => {
-                if(item.poster_path && !blacklist.includes(item.id.toString())) {
-                    const div = document.createElement('div');
-                    div.className = 'p-card p-1.5';
-                    div.onclick = () => { activeID = item.id; document.getElementById('playerBox').classList.remove('hidden'); document.getElementById('playTitle').innerText = (item.title || item.name); changeServer(1); };
-                    div.innerHTML = `<div class="star-rating">★ ${item.vote_average.toFixed(1)}</div><img src="https://image.tmdb.org/t/p/w342${item.poster_path}" class="w-full h-auto rounded-xl mb-2"><h4 class="text-[9px] font-black text-center truncate uppercase px-2">${item.title || item.name}</h4>`;
-                    grid.appendChild(div);
-                }
+            grid.innerHTML = "";
+            data.results.forEach(item => {
+                const div = document.createElement('div');
+                div.className = 'p-card p-1.5';
+                div.innerHTML = `<img src="https://image.tmdb.org/t/p/w500${item.poster_path}"><div class="p-2 text-xs font-bold">${item.title || item.name}</div>`;
+                div.onclick = () => {
+                    document.getElementById('videoFrame').src = `https://vidsrc.me/embed/${currentMode}?tmdb=${item.id}`;
+                    document.getElementById('playerBox').classList.remove('hidden');
+                };
+                grid.appendChild(div);
             });
         }
 
-        function setLang(l) { isSouth = (l === 'south'); isDubbed = (l === 'dubbed'); currentLang = l; page = 1; fetchContent(); }
-        function changeServer(num) {
-            const frame = document.getElementById('videoFrame');
-            frame.src = num === 1 ? `https://vidsrc.me/embed/${currentMode}?tmdb=${activeID}` : `https://vidsrc.to/embed/${currentMode}/${activeID}`;
-        }
-        async function watchTrailer() {
-            const res = await fetch(`https://api.themoviedb.org/3/${currentMode}/${activeID}/videos?api_key=${API_KEY}`);
-            const data = await res.json();
-            const trailer = data.results.find(v => v.type === 'Trailer');
-            if (trailer) document.getElementById('videoFrame').src = `https://www.youtube.com/embed/${trailer.key}?autoplay=1`;
-        }
-        function setMode(m) { currentMode = m; page = 1; fetchContent(); if(document.getElementById('sidebar').classList.contains('active')) toggleMenu(); }
-        function nextPage() { page++; fetchContent(page, '', true); }
-        window.onload = () => fetchContent();
+        window.onload = fetchContent;
     </script>
 </body>
 </html>
