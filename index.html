@@ -77,7 +77,9 @@
         function displayMovies(e){document.getElementById('moviesGrid').innerHTML='',e.forEach(e=>{if(!blockedMovies.includes(e.id)){const t=document.createElement('div');t.className='poster',t.onclick=()=>watchNow(e),t.innerHTML=`<img src="${IMAGE_BASE}${e.poster_path||''}" onerror="this.src='https://via.placeholder.com/220x350/333/fff?text=⭐PREMIUM'" alt="${e.title}"><div class="gold-star">⭐</div><h3>${e.title||e.name}</h3><button>Watch Now</button>`,document.getElementById('moviesGrid').appendChild(t)}}),document.getElementById('loadMore').style.display='block'}
         async function watchNow(e){window.open(MONETAG_LINK,'_blank','noopener,noreferrer');try{const t=await fetch(`https://api.themoviedb.org/3/${e.title?'movie':'tv'}/${e.id}/videos?api_key=${API_KEY}`),n=await t.json(),a=n.results.find(e=>e.type==='Trailer');document.getElementById('player').src=a?`https://www.youtube.com/embed/${a.key}?autoplay=1&rel=0`:''}catch(e){document.getElementById('player').src='https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1'}document.getElementById('player-modal').style.display='flex'}
         document.getElementById('loadMore').onclick=()=>{currentPage++,fetchMovies()},document.getElementById('player-modal').onclick=()=>{document.getElementById('player-modal').style.display='none',document.getElementById('player').src=''},fetchMovies();
-    </script>
+
+</script>
+script src="features.js"></script>`
 </body>
 </html>
 Attachments area
