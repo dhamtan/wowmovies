@@ -1,15 +1,14 @@
-!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Premium Movies</title>
     
-    <!-- ADSTERRA CONTAINER ADS -->
+    <!-- ADSTERRA ADS -->
     <script async="async" data-cfasync="false" src="https://pl28735283.effectivegatecpm.com/745c1ef3a6af871203febf2e53f94208/invoke.js"></script>
     <div id="container-745c1ef3a6af871203febf2e53f94208"></div>
     
-    <!-- ADSTERRA BANNER ADS -->
     <script>
       var atOptions = {
         'key' : 'af0c8f436074a1ddc5d523ea4bcdd0a4',
@@ -22,66 +21,201 @@
     <script async src="https://www.highperformanceformat.com/af0c8f436074a1ddc5d523ea4bcdd0a4/invoke.js"></script>
 
     <style>
-        *{margin:0;padding:0;box-sizing:border-box}body{font-family:Arial,sans-serif;background:linear-gradient(to bottom,#000,#111);color:#fff;overflow-x:hidden}.tabs{display:flex;justify-content:center;gap:15px;padding:20px;flex-wrap:wrap}.tab{background:linear-gradient(45deg,#ff8c00,#ffa500);padding:15px 25px;cursor:pointer;border-radius:25px;font-weight:700;transition:.3s;box-shadow:0 4px 10px rgba(255,140,0,.5);color:#fff}.tab:hover,.active{background:linear-gradient(45deg,gold,#ffd700);transform:scale(1.05)}.movies-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:25px;padding:30px;max-width:1400px;margin:0 auto}.poster{width:100%;height:350px;background:#222;border-radius:15px;cursor:pointer;position:relative;overflow:hidden;transition:.3s;box-shadow:0 8px 20px rgba(0,0,0,.5)}.poster:hover{transform:translateY(-10px);box-shadow:0 15px 30px rgba(255,215,0,.4)}.poster img{width:100%;height:100%;object-fit:cover}.gold-star{position:absolute;top:15px;right:15px;font-size:35px;color:#ffd700;text-shadow:0 0 10px gold;animation:sparkle 2s infinite}@keyframes sparkle{0%,100%{opacity:1}50%{opacity:.5}}.poster h3{position:absolute;bottom:10px;left:10px;margin:0;background:rgba(0,0,0,.8);padding:5px 10px;border-radius:5px;font-size:14px}.poster button{position:absolute;bottom:10px;right:10px;background:linear-gradient(gold,orange);color:#000;border:none;padding:8px 15px;border-radius:20px;font-weight:700;cursor:pointer}.load-more{display:block;margin:40px auto;padding:20px 50px;background:linear-gradient(yellow,gold);color:#000;border:none;border-radius:30px;font-size:18px;font-weight:700;cursor:pointer;box-shadow:0 10px 20px rgba(255,215,0,.5);transition:.3s}.load-more:hover{transform:scale(1.1)}#sidebar{position:fixed;left:-280px;top:0;width:280px;height:100vh;background:linear-gradient(to bottom,#333,#111);transition:.3s ease;z-index:1001;box-shadow:2px 0 20px rgba(0,0,0,.8)}#sidebar.open{left:0}.hamburger{position:fixed;top:25px;left:25px;z-index:1002;cursor:pointer;display:flex;flex-direction:column;justify-content:space-around;width:35px;height:30px}.hamburger span{display:block;width:100%;height:5px;background:linear-gradient(white,#ccc);border-radius:3px;transition:.3s;box-shadow:0 2px 5px rgba(0,0,0,.5)}.hamburger.active span:nth-child(1){transform:rotate(45deg) translate(8px,8px)}.hamburger.active span:nth-child(2){opacity:0}.hamburger.active span:nth-child(3){transform:rotate(-45deg) translate(7px,-7px)}.sidebar-menu{padding:80px 30px 30px}.sidebar-menu a{display:block;color:#ffd700;padding:18px 20px;margin:10px 0;text-decoration:none;background:rgba(255,215,0,.1);border-radius:10px;font-weight:700;transition:.3s;border-left:4px solid gold}.sidebar-menu a:hover{background:rgba(255,215,0,.3);transform:translateX(10px)}#player-modal{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.98);z-index:2000;justify-content:center;align-items:center}#player{width:90%;height:70%;max-width:1200px;border-radius:15px;box-shadow:0 20px 50px rgba(0,0,0,1)}.live-users{position:fixed;top:20px;right:20px;background:linear-gradient(green,#00ff00);padding:15px 25px;border-radius:30px;color:#000;font-weight:700;font-size:16px;box-shadow:0 5px 15px rgba(0,255,0,.5);animation:pulse 2s infinite;z-index:1000}@keyframes pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.05)}}.first-ad{position:fixed;top:50%;left:50%;transform:translate(-50%,-50%);background:linear-gradient(white,#f0f0f0);padding:30px;border-radius:20px;z-index:9999;text-align:center;box-shadow:0 20px 50px rgba(0,0,0,.8);display:none;max-width:400px}.first-ad button{background:green;color:#fff;border:none;padding:12px 30px;border-radius:25px;font-weight:700;cursor:pointer;margin-top:15px}
+        body { margin: 0; font-family: Arial, sans-serif; background: linear-gradient(to bottom, #000, #111); color: #fff; overflow-x: hidden; }
+        .tabs { display: flex; justify-content: center; gap: 15px; padding: 20px; flex-wrap: wrap; }
+        .tab { background: linear-gradient(45deg, #ff8c00, #ffa500); padding: 15px 25px; cursor: pointer; border-radius: 25px; font-weight: bold; transition: 0.3s; box-shadow: 0 4px 10px rgba(255,140,0,0.5); color: white; }
+        .tab:hover, .tab.active { background: linear-gradient(45deg, gold, #ffd700); transform: scale(1.05); }
+        .movies-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 25px; padding: 30px; max-width: 1400px; margin: 0 auto; }
+        .poster { width: 100%; height: 350px; background: #222; border-radius: 15px; cursor: pointer; position: relative; overflow: hidden; transition: 0.3s; box-shadow: 0 8px 20px rgba(0,0,0,0.5); }
+        .poster:hover { transform: translateY(-10px); box-shadow: 0 15px 30px rgba(255,215,0,0.4); }
+        .poster img { width: 100%; height: 100%; object-fit: cover; }
+        .gold-star { position: absolute; top: 15px; right: 15px; font-size: 35px; color: #ffd700; text-shadow: 0 0 10px gold; animation: sparkle 2s infinite; }
+        @keyframes sparkle { 0%,100%{opacity:1;} 50%{opacity:0.5;} }
+        .poster h3 { position: absolute; bottom: 10px; left: 10px; margin: 0; background: rgba(0,0,0,0.8); padding: 5px 10px; border-radius: 5px; font-size: 14px; }
+        .poster button { position: absolute; bottom: 10px; right: 10px; background: linear-gradient(gold,orange); color: black; border: none; padding: 8px 15px; border-radius: 20px; font-weight: bold; cursor: pointer; }
+        .load-more { display: block; margin: 40px auto; padding: 20px 50px; background: linear-gradient(yellow,gold); color: black; border: none; border-radius: 30px; font-size: 18px; font-weight: bold; cursor: pointer; box-shadow: 0 10px 20px rgba(255,215,0,0.5); transition: 0.3s; }
+        .load-more:hover { transform: scale(1.1); }
+        #sidebar { position: fixed; left: -280px; top: 0; width: 280px; height: 100vh; background: linear-gradient(to bottom, #333, #111); transition: 0.3s ease; z-index: 1001; box-shadow: 2px 0 20px rgba(0,0,0,0.8); }
+        #sidebar.open { left: 0; }
+        .hamburger { position: fixed; top: 25px; left: 25px; z-index: 1002; cursor: pointer; display: flex; flex-direction: column; justify-content: space-around; width: 35px; height: 30px; }
+        .hamburger span { display: block; width: 100%; height: 5px; background: linear-gradient(white, #ccc); border-radius: 3px; transition: 0.3s; box-shadow: 0 2px 5px rgba(0,0,0,0.5); }
+        .hamburger.active span:nth-child(1) { transform: rotate(45deg) translate(8px, 8px); }
+        .hamburger.active span:nth-child(2) { opacity: 0; }
+        .hamburger.active span:nth-child(3) { transform: rotate(-45deg) translate(7px, -7px); }
+        .sidebar-menu { padding: 80px 30px 30px; }
+        .sidebar-menu a { display: block; color: #ffd700; padding: 18px 20px; margin: 10px 0; text-decoration: none; background: rgba(255,215,0,0.1); border-radius: 10px; font-weight: bold; transition: 0.3s; border-left: 4px solid gold; }
+
+.sidebar-menu a:hover { background: rgba(255,215,0,0.3); transform: translateX(10px); }
+        #player-modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.98); z-index: 2000; justify-content: center; align-items: center; }
+        #player { width: 90%; height: 70%; max-width: 1200px; border-radius: 15px; box-shadow: 0 20px 50px rgba(0,0,0,1); }
+        .live-users { position: fixed; top: 20px; right: 20px; background: linear-gradient(green, #00ff00); padding: 15px 25px; border-radius: 30px; color: black; font-weight: bold; font-size: 16px; box-shadow: 0 5px 15px rgba(0,255,0,0.5); animation: pulse 2s infinite; z-index: 1000; }
+        @keyframes pulse { 0%,100%{transform:scale(1);} 50%{transform:scale(1.05);} }
+        .loading { grid-column: 1/-1; text-align: center; padding: 50px; font-size: 18px; }
     </style>
 </head>
 <body>
     <!-- LIVE USERS -->
     <div class="live-users" id="liveUsers">🟢 Live: <span id="userCount">1,247</span></div>
     
-    <!-- HAMBURGER MENU -->
+    <!-- HAMBURGER -->
     <div class="hamburger" id="hamburger"><span></span><span></span><span></span></div>
     
     <!-- SIDEBAR -->
     <div id="sidebar">
         <div class="sidebar-menu">
-            <a href="#premium">Premium Movies ⭐</a>
-            <a href="trailer.html">Trailer</a>
-            <a href="shorts.html">Shorts</a>
-            <a href="terms.html">Terms</a>
-            <a href="block.html">Block</a>
-            <a href="about.html">About</a>
+            <a href="#" onclick="showAlert('Premium Movies')">Premium Movies ⭐</a>
+            <a href="#" onclick="showAlert('Trailers Coming Soon')">Trailer</a>
+            <a href="#" onclick="showAlert('Shorts Coming Soon')">Shorts</a>
+            <a href="#" onclick="showAlert('Terms & Conditions')">Terms</a>
+            <a href="#" onclick="showAlert('Block Movies')">Block</a>
+            <a href="#" onclick="showAlert('About Us')">About</a>
         </div>
     </div>
     
-    <!-- FIRST AD POPUP -->
-    <div class="first-ad" id="firstAd">
-        <h3>🎥 Premium Movies!</h3>
-        <p>Unlock Hollywood + Bollywood</p>
-        <button onclick="closeFirstAd()">Continue ➤</button>
-    </div>
-    
-    <!-- LANGUAGE TABS -->
-    <div class="tabs">
+    <!-- TABS -->
+    <div class="tabs" id="tabs">
         <div class="tab active" data-lang="hi">हिंदी मूवीज</div>
         <div class="tab" data-lang="en">English</div>
         <div class="tab" data-lang="pa">Punjabi</div>
-        <div class="tab" data-lang="south">South</div>
+        <div class="tab" data-lang="te">South</div>
         <div class="tab" data-lang="hi-dub">Hindi Dubbed</div>
-        <div class="tab" data-lang="web">Web Series</div>
+        <div class="tab" data-lang="tv">Web Series</div>
     </div>
     
-    <!-- MOVIES GRID -->
-    <div class="movies-grid" id="moviesGrid">Loading Superhits...</div>
-    <button class="load-more" id="loadMore">Load More ➕</button>
+    <!-- MOVIES -->
+    <div class="movies-grid" id="moviesGrid"><div class="loading">🔥 Loading Superhits...</div></div>
+    <button class="load-more" id="loadMore" style="display:none;">Load More ➕</button>
     
-    <!-- VIDEO PLAYER -->
+    <!-- PLAYER -->
     <div id="player-modal">
         <iframe id="player" allowfullscreen allow="autoplay;fullscreen"></iframe>
     </div>
 
     <script>
-        const API_KEY='174d0214bf933dd59b3d5ec68a0c967f',IMAGE_BASE='https://image.tmdb.org/t/p/w500',MONETAG_LINK='https://omg10.com/4/10645051';let currentLang='hi',currentPage=1,isFirstVisit=!localStorage.visited,blockedMovies=[];
-        function updateLiveUsers(){document.getElementById('userCount').textContent=(1e3+Math.floor(1e3*Math.random())).toLocaleString()}setInterval(updateLiveUsers,3e3),updateLiveUsers(),isFirstVisit&&(document.getElementById('firstAd').style.display='block'),closeFirstAd=()=>{document.getElementById('firstAd').style.display='none',localStorage.visited='true',window.open(MONETAG_LINK,'_blank','noopener,noreferrer')},document.getElementById('hamburger').onclick=()=>{document.getElementById('sidebar').classList.toggle('open'),document.getElementById('hamburger').classList.toggle('active')},document.querySelectorAll('.tab').forEach(t=>t.onclick=()=>{document.querySelector('.active').classList.remove('active'),t.classList.add('active'),currentLang=t.dataset.lang,currentPage=1,document.getElementById('moviesGrid').innerHTML='Loading...',fetchMovies()});
-        async function fetchMovies(){const e=currentLang==='web'?'/discover/tv':''+'/discover/movie',t=new URLSearchParams({api_key:API_KEY,language:currentLang==='hi'?'hi-IN':currentLang==='pa'?'pa-IN':currentLang==='south'?'te-IN':'en-US',sort_by:'popularity.desc',page:currentPage,'vote_average.gte':7});try{const n=await fetch(`https://api.themoviedb.org/3${e}?${t}`),a=await n.json();displayMovies(a.results||[])}catch(e){document.getElementById('moviesGrid').innerHTML='<p style="grid-column:1/-1;text-align:center">🔥 Loading Superhits...</p>'}}
-        function displayMovies(e){document.getElementById('moviesGrid').innerHTML='',e.forEach(e=>{if(!blockedMovies.includes(e.id)){const t=document.createElement('div');t.className='poster',t.onclick=()=>watchNow(e),t.innerHTML=`<img src="${IMAGE_BASE}${e.poster_path||''}" onerror="this.src='https://via.placeholder.com/220x350/333/fff?text=⭐PREMIUM'" alt="${e.title}"><div class="gold-star">⭐</div><h3>${e.title||e.name}</h3><button>Watch Now</button>`,document.getElementById('moviesGrid').appendChild(t)}}),document.getElementById('loadMore').style.display='block'}
-        async function watchNow(e){window.open(MONETAG_LINK,'_blank','noopener,noreferrer');try{const t=await fetch(`https://api.themoviedb.org/3/${e.title?'movie':'tv'}/${e.id}/videos?api_key=${API_KEY}`),n=await t.json(),a=n.results.find(e=>e.type==='Trailer');document.getElementById('player').src=a?`https://www.youtube.com/embed/${a.key}?autoplay=1&rel=0`:''}catch(e){document.getElementById('player').src='https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1'}document.getElementById('player-modal').style.display='flex'}
-        document.getElementById('loadMore').onclick=()=>{currentPage++,fetchMovies()},document.getElementById('player-modal').onclick=()=>{document.getElementById('player-modal').style.display='none',document.getElementById('player').src=''},fetchMovies();
+        // CONFIG
+        const API_KEY = '174d0214bf933dd59b3d5ec68a0c967f';
+        const IMAGE_BASE = 'https://image.tmdb.org/t/p/w500';
+        const MONETAG_LINK = 'https://omg10.com/4/10645051';
+        let currentLang = 'hi';
+        let currentPage = 1;
 
-</script>
-script src="features.js"></script>`
+        // LIVE USERS
+        function updateLiveUsers() {
+            document.getElementById('userCount').textContent = (1000 + Math.floor(Math.random() * 1000)).toLocaleString();
+        }
+        setInterval(updateLiveUsers, 3000);
+        updateLiveUsers();
+
+        // SIDEBAR ✅ FIXED
+        document.getElementById('hamburger').onclick = function() {
+            document.getElementById('sidebar').classList.toggle('open');
+            this.classList.toggle('active');
+        };
+
+        // ALERT FUNCTION ✅ FIXED
+        function showAlert(message) {
+            alert(message + '!
+
+Check Hindi/English movies below 👇');
+            document.getElementById('sidebar').classList.remove('open');
+            document.getElementById('hamburger').classList.remove('active');
+        }
+
+        // LANGUAGE TABS ✅ FIXED
+        document.querySelectorAll('.tab').forEach(tab => {
+            tab.onclick = function() {
+                document.querySelector('.tab.active').classList.remove('active');
+                this.classList.add('active');
+                currentLang = this.dataset.lang;
+                currentPage = 1;
+                document.getElementById('moviesGrid').innerHTML = '<div class="loading">Loading ' + this.textContent + '...</div>';
+                fetchMovies();
+            };
+        });
+
+// FETCH MOVIES ✅ LANGUAGE FIXED
+        async function fetchMovies() {
+            const isTV = currentLang === 'tv';
+            const langMap = {
+                'hi': 'hi-IN', 'en': 'en-US', 'pa': 'pa-IN', 
+                'te': 'te-IN', 'hi-dub': 'hi-IN'
+            };
+            const language = langMap[currentLang] || 'en-US';
+            
+            const params = new URLSearchParams({
+                api_key: API_KEY,
+                language: language,
+                sort_by: 'popularity.desc',
+                page: currentPage,
+                'vote_average.gte': 6
+            });
+
+            try {
+                const url = https://api.themoviedb.org/3/${isTV ? 'discover/tv' : 'discover/movie'}?${params};
+                const response = await fetch(url);
+                const data = await response.json();
+                displayMovies(data.results || []);
+            } catch (error) {
+                document.getElementById('moviesGrid').innerHTML = '<div class="loading">🔥 Loading Superhits...</div>';
+            }
+        }
+
+        // DISPLAY MOVIES
+        function displayMovies(movies) {
+            const grid = document.getElementById('moviesGrid');
+            grid.innerHTML = '';
+            
+            movies.forEach(movie => {
+                const poster = document.createElement('div');
+                poster.className = 'poster';
+                poster.onclick = () => watchNow(movie);
+                poster.innerHTML = 
+                    <img src="${IMAGE_BASE}${movie.poster_path || ''}" 
+                         onerror="this.src='https://via.placeholder.com/220x350/333/fff?text=⭐PREMIUM'" 
+                         alt="${movie.title || movie.name}">
+                    <div class="gold-star">⭐</div>
+                    <h3>${movie.title || movie.name}</h3>
+                    <button>Watch Now</button>
+                ;
+                grid.appendChild(poster);
+            });
+            
+            document.getElementById('loadMore').style.display = movies.length === 20 ? 'block' : 'none';
+        }
+
+        // WATCH MOVIE + MONETAG
+        async function watchNow(movie) {
+            // MONETAG AD
+            if (Math.random() < 0.5) {
+                window.open(MONETAG_LINK, '_blank', 'noopener,noreferrer');
+            }
+
+            try {
+                const type = movie.title ? 'movie' : 'tv';
+                const response = await fetch(https://api.themoviedb.org/3/${type}/${movie.id}/videos?api_key=${API_KEY});
+                const data = await response.json();
+                const trailer = data.results.find(video => video.type === 'Trailer');
+                document.getElementById('player').src = trailer ? https://www.youtube.com/embed/${trailer.key}?autoplay=1&rel=0 : '';
+            } catch (e) {
+                document.getElementById('player').src = 'https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1';
+            }
+            document.getElementById('player-modal').style.display = 'flex';
+        }
+
+        // LOAD MORE
+        document.getElementById('loadMore').onclick = () => {
+            currentPage++;
+            fetchMovies();
+        };
+
+        // CLOSE PLAYER
+        document.getElementById('player-modal').onclick = () => {
+            document.getElementById('player-modal').style.display = 'none';
+            document.getElementById('player').src = '';
+        };
+
+        // START
+        fetchMovies();
+    </script>
 </body>
 </html>
-Attachments area
-Preview YouTube video Rick Astley - Never Gonna Give You Up (Official Video) (4K Remaster)Preview YouTube video Rick Astley - Never Gonna Give You Up (Official Video) (4K Remaster)
-
