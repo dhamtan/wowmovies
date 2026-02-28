@@ -1,15 +1,19 @@
-!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Premium Movies</title>
     
-    <!-- ADSTERRA CONTAINER ADS -->
+    <meta name="google-site-verification" content="1XYvNp3KDylNaVS3TH15kSAKQHPIjMQZm_zIHLQBIt8" />
+
+    <meta name="description" content="Watch Latest Movies Online Free on Premium Movies. Bollywood, Hollywood and South Dubbed.">
+    <meta name="keywords" content="movies, online streaming, free movies, premium movies, watch online">
+    <meta name="robots" content="index, follow">
+    
     <script async="async" data-cfasync="false" src="https://pl28735283.effectivegatecpm.com/745c1ef3a6af871203febf2e53f94208/invoke.js"></script>
     <div id="container-745c1ef3a6af871203febf2e53f94208"></div>
     
-    <!-- ADSTERRA BANNER ADS -->
     <script>
       var atOptions = {
         'key' : 'af0c8f436074a1ddc5d523ea4bcdd0a4',
@@ -26,13 +30,10 @@
     </style>
 </head>
 <body>
-    <!-- LIVE USERS -->
     <div class="live-users" id="liveUsers">🟢 Live: <span id="userCount">1,247</span></div>
     
-    <!-- HAMBURGER MENU -->
     <div class="hamburger" id="hamburger"><span></span><span></span><span></span></div>
     
-    <!-- SIDEBAR -->
     <div id="sidebar">
         <div class="sidebar-menu">
             <a href="#premium">Premium Movies ⭐</a>
@@ -44,14 +45,12 @@
         </div>
     </div>
     
-    <!-- FIRST AD POPUP -->
     <div class="first-ad" id="firstAd">
         <h3>🎥 Premium Movies!</h3>
         <p>Unlock Hollywood + Bollywood</p>
         <button onclick="closeFirstAd()">Continue ➤</button>
     </div>
     
-    <!-- LANGUAGE TABS -->
     <div class="tabs">
         <div class="tab active" data-lang="hi">हिंदी मूवीज</div>
         <div class="tab" data-lang="en">English</div>
@@ -61,11 +60,9 @@
         <div class="tab" data-lang="web">Web Series</div>
     </div>
     
-    <!-- MOVIES GRID -->
     <div class="movies-grid" id="moviesGrid">Loading Superhits...</div>
     <button class="load-more" id="loadMore">Load More ➕</button>
     
-    <!-- VIDEO PLAYER -->
     <div id="player-modal">
         <iframe id="player" allowfullscreen allow="autoplay;fullscreen"></iframe>
     </div>
@@ -77,10 +74,7 @@
         function displayMovies(e){document.getElementById('moviesGrid').innerHTML='',e.forEach(e=>{if(!blockedMovies.includes(e.id)){const t=document.createElement('div');t.className='poster',t.onclick=()=>watchNow(e),t.innerHTML=`<img src="${IMAGE_BASE}${e.poster_path||''}" onerror="this.src='https://via.placeholder.com/220x350/333/fff?text=⭐PREMIUM'" alt="${e.title}"><div class="gold-star">⭐</div><h3>${e.title||e.name}</h3><button>Watch Now</button>`,document.getElementById('moviesGrid').appendChild(t)}}),document.getElementById('loadMore').style.display='block'}
         async function watchNow(e){window.open(MONETAG_LINK,'_blank','noopener,noreferrer');try{const t=await fetch(`https://api.themoviedb.org/3/${e.title?'movie':'tv'}/${e.id}/videos?api_key=${API_KEY}`),n=await t.json(),a=n.results.find(e=>e.type==='Trailer');document.getElementById('player').src=a?`https://www.youtube.com/embed/${a.key}?autoplay=1&rel=0`:''}catch(e){document.getElementById('player').src='https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1'}document.getElementById('player-modal').style.display='flex'}
         document.getElementById('loadMore').onclick=()=>{currentPage++,fetchMovies()},document.getElementById('player-modal').onclick=()=>{document.getElementById('player-modal').style.display='none',document.getElementById('player').src=''},fetchMovies();
-
-</script>
-script src="features.js"></script>`
+    </script>
+    <script src="features.js"></script>
 </body>
 </html>
-Attachments area
-Preview YouTube video Rick Astley - Never Gonna Give You Up (Official Video) (4K Remaster)Preview YouTube video Rick Astley - Never Gonna Give You Up (Official Video) (4K Remaster)
