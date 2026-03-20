@@ -28,22 +28,22 @@
     <link rel="shortcut icon" href="https://www.themoviedb.org/favicon.ico">
     <link rel="apple-touch-icon" href="https://www.themoviedb.org/favicon.ico">
 
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script async data-cfasync="false" src="https://pl28735283.effectivegatecpm.com/745c1ef3a6af871203febf2e53f94208/invoke.js"></script>
+    <script src="https://cdn.tailwindcss.com" defer></script>
+    <script async data-cfasync="false" src="https://pl28735283.effectivegatecpm.com/745c1ef3a6af871203febf2e53f94208/invoke.js" defer></script>
 
     <style>
         :root { --main-orange: #ff4f00; --bg-dark: #080a0e; --card-bg: #12151c; }
         body { background-color: var(--bg-dark); color: white; font-family: 'Segoe UI', sans-serif; margin: 0; padding-bottom: 80px; overflow-x: hidden; scroll-behavior: smooth; }
         
         #hero-slider { position: relative; width: 100%; height: 50vh; background: #000; overflow: hidden; }
-        .poster-3d { position: absolute; inset: 0; opacity: 0; transition: opacity 0.4s ease-in-out; z-index: 1; }
-        .poster-active { opacity: 1; z-index: 10; }
+        .poster-3d { position: absolute; inset: 0; opacity: 0; transition: opacity 0.4s ease-in-out, transform 0.4s ease-in-out; z-index: 1; transform: scale(0.9); }
+        .poster-active { opacity: 1; z-index: 10; transform: scale(1); }
 
         .movie-grid { display: grid; grid-template-cols: repeat(2, 1fr); gap: 12px; padding: 15px; }
         @media (min-width: 768px) { .movie-grid { grid-template-cols: repeat(5, 1fr); gap: 20px; padding: 15px 120px; } }
 
-        .movie-card { position: relative; border-radius: 12px; overflow: hidden; aspect-ratio: 2/3; background: var(--card-bg); cursor: pointer; border: 1px solid rgba(255,255,255,0.05); transition: transform 0.2s; }
-        .movie-card:active { transform: scale(0.96); }
+        .movie-card { position: relative; border-radius: 12px; overflow: hidden; aspect-ratio: 2/3; background: var(--card-bg); cursor: pointer; border: 1px solid rgba(255,255,255,0.05); transition: transform 0.2s, box-shadow 0.2s; }
+        .movie-card:active { transform: scale(0.96); box-shadow: 0 0 15px rgba(255,79,0,0.3); }
         .movie-card img { width: 100%; height: 100%; object-fit: cover; }
         
         .rating-badge { position: absolute; top: 8px; right: 8px; background: #ffd700; color: #000; padding: 2px 6px; border-radius: 4px; font-size: 10px; font-weight: 900; z-index: 20; }
@@ -53,7 +53,7 @@
         .nav-item { color: #888; text-align: center; font-size: 10px; font-weight: bold; flex: 1; cursor: pointer; }
         .nav-item.active { color: var(--main-orange); }
 
-        .filter-btn { background: #1e232b; color: white; padding: 8px 16px; border-radius: 8px; font-size: 12px; font-weight: bold; white-space: nowrap; cursor: pointer; border: 1px solid transparent; }
+        .filter-btn { background: #1e232b; color: white; padding: 8px 16px; border-radius: 8px; font-size: 12px; font-weight: bold; white-space: nowrap; cursor: pointer; border: 1px solid transparent; transition: background 0.2s; }
         .filter-btn.active { background: var(--main-orange); border-color: rgba(255,255,255,0.2); }
 
         .btn-3d { position: relative; padding: 12px 24px; font-size: 12px; font-weight: 900; text-transform: uppercase; border: none; border-radius: 10px; cursor: pointer; transition: 0.1s; color: white; display: inline-block; box-shadow: 0 5px 0 rgba(0,0,0,0.5); }
@@ -73,8 +73,27 @@
         
         .seo-h1 { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); border: 0; }
         
+        /* MULTI-SERVER BUTTON STYLING */
         .server-btn { background: #1e232b; color: white; padding: 10px 18px; border-radius: 6px; font-weight: 800; font-size: 11px; white-space: nowrap; transition: 0.1s; border: 1px solid rgba(255,255,255,0.05); }
         .server-btn.active-srv { background: var(--main-orange); box-shadow: 0 0 15px rgba(255,79,0,0.4); }
+
+        /* PLAYER OVERLAY MOBILE FOR PC */
+        @media (min-width: 768px) {
+            #mainIframe {
+                width: 375px; /* Mobile portrait width */
+                height: 667px; /* Mobile portrait height */
+                border-radius: 20px;
+                border: 4px solid #1e232b;
+                box-shadow: 0 0 20px rgba(0,0,0,0.5);
+                margin: auto;
+            }
+            .iframe-container {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                padding: 20px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -167,8 +186,8 @@
             <button onclick="closePlayer()" class="text-xl font-bold bg-white/10 w-8 h-8 rounded-full">✕</button>
         </div>
     </div>
-    <div class="flex-1 relative bg-black">
-        <iframe id="mainIframe" src="" class="w-full h-full" frameborder="0" allowfullscreen></iframe>
+    <div class="flex-1 iframe-container">
+        <iframe id="mainIframe" src="" class="w-full h-full" frameborder="0" allowfullscreen referrerpolicy="no-referrer"></iframe>
     </div>
     <div class="p-3 bg-[#080a0e] border-t border-white/5">
         <p class="text-[9px] text-gray-500 font-bold mb-2 uppercase text-center">Select Fast Server (8 Active)</p>
