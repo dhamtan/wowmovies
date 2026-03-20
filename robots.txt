@@ -1,0 +1,16 @@
+# Robots.txt for https://pri-movies.pages.dev/
+User-agent: *
+Allow: /
+Allow: /index.html
+
+# Prevent indexing of specific search parameters to avoid duplicate content
+Disallow: /*?s=
+Disallow: /*&s=
+Disallow: /search/
+
+# Ad-network bots access
+User-agent: Mediapartners-Google
+Allow: /
+
+# Sitemap Location
+Sitemap: https://pri-movies.pages.dev/sitemap.xml
