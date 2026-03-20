@@ -5,193 +5,111 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     
-    <title>PRI-MOVIES - Watch HD Movies & Web Series Free | Hollywood, Bollywood, South</title>
-    <meta name="title" content="PRI-MOVIES - Watch HD Movies & Web Series Free">
-    <meta name="description" content="Stream the latest Hollywood, Bollywood, and South Indian movies in HD for free. PRI-MOVIES offers a premium experience for web series and movies with high-speed servers.">
-    <meta name="keywords" content="PRI-MOVIES, watch movies online, free hd movies, bollywood movies 2026, latest web series free, south indian movies dubbed, hollywood movies in hindi">
-    <meta name="robots" content="index, follow">
-    <link rel="canonical" href="https://pri-movie.page.dev/">
+    <meta name="google-site-verification" content="r4qiBWvH6r8g4r5B7QDJDwdewlm9aCNhUoaNleV1soA" />
+
+    <title>PRI-MOVIES - Watch Latest HD Movies & Web Series Free Online</title>
+    <meta name="title" content="PRI-MOVIES - Watch Latest HD Movies & Web Series Free Online">
+    <meta name="description" content="Watch the latest Hollywood, Bollywood, South Indian movies and Hindi web series in HD for free on PRI-MOVIES.">
+    <link rel="canonical" href="https://pri-movies.pages.dev/">
+
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="icon" type="image/png" href="https://www.themoviedb.org/favicon.ico">
 
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://pri-movie.page.dev/">
-    <meta property="og:title" content="PRI-MOVIES - Watch HD Movies & Web Series Free">
-    <meta property="og:description" content="Unlimited streaming of latest movies and series in HD quality. No registration required.">
+    <meta property="og:url" content="https://pri-movies.pages.dev/">
+    <meta property="og:title" content="PRI-MOVIES - HD Movies & Web Series">
     <meta property="og:image" content="https://www.themoviedb.org/assets/2/v4/logos/v2/blue_square_2-d53d28331f51ed07d6cd1aa3a1bd7e35.svg">
 
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://pri-movie.page.dev/">
-    <meta property="twitter:title" content="PRI-MOVIES - Watch HD Movies & Web Series Free">
-    <meta property="twitter:description" content="Stream Hollywood & Bollywood movies for free in ultra HD.">
-    <meta property="twitter:image" content="https://www.themoviedb.org/assets/2/v4/logos/v2/blue_square_2-d53d28331f51ed07d6cd1aa3a1bd7e35.svg">
+    <script src="https://cdn.tailwindcss.com"></script>
     
-    <link rel="icon" type="image/png" href="https://www.themoviedb.org/favicon.ico">
-    <link rel="shortcut icon" href="https://www.themoviedb.org/favicon.ico">
-    <link rel="apple-touch-icon" href="https://www.themoviedb.org/favicon.ico">
-
-    <script src="https://cdn.tailwindcss.com" defer></script>
-    <script async data-cfasync="false" src="https://pl28735283.effectivegatecpm.com/745c1ef3a6af871203febf2e53f94208/invoke.js" defer></script>
+    <script async data-cfasync="false" src="https://pl28735283.effectivegatecpm.com/745c1ef3a6af871203febf2e53f94208/invoke.js"></script>
 
     <style>
-        :root { --main-orange: #ff4f00; --bg-dark: #080a0e; --card-bg: #12151c; }
-        body { background-color: var(--bg-dark); color: white; font-family: 'Segoe UI', sans-serif; margin: 0; padding-bottom: 80px; overflow-x: hidden; scroll-behavior: smooth; }
+        :root { --main-orange: #ff4f00; --bg-dark: #0b0d12; --card-bg: #1a1d24; }
+        body { background-color: var(--bg-dark); color: white; font-family: 'Inter', sans-serif; margin: 0; padding-bottom: 80px; overflow-x: hidden; }
         
-        #hero-slider { position: relative; width: 100%; height: 50vh; background: #000; overflow: hidden; }
-        .poster-3d { position: absolute; inset: 0; opacity: 0; transition: opacity 0.4s ease-in-out, transform 0.4s ease-in-out; z-index: 1; transform: scale(0.9); }
-        .poster-active { opacity: 1; z-index: 10; transform: scale(1); }
+        .site-header { background: #000; padding: 10px 15px; display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid #1a1a1a; position: sticky; top: 0; z-index: 100; }
+        .logo { font-size: 19px; font-weight: 900; color: var(--main-orange); font-style: italic; text-transform: uppercase; cursor: pointer; }
+        
+        #hero-slider { position: relative; width: 100%; height: 32vh; background: #000; overflow: hidden; }
+        .poster-3d { position: absolute; inset: 0; opacity: 0; transition: opacity 0.6s ease; z-index: 1; }
+        .poster-active { opacity: 1; z-index: 10; }
 
-        .movie-grid { display: grid; grid-template-cols: repeat(2, 1fr); gap: 12px; padding: 15px; }
-        @media (min-width: 768px) { .movie-grid { grid-template-cols: repeat(5, 1fr); gap: 20px; padding: 15px 120px; } }
+        .movie-grid { display: grid; grid-template-cols: repeat(2, 1fr); gap: 10px; padding: 10px; }
+        @media (min-width: 768px) { .movie-grid { grid-template-cols: repeat(5, 1fr); gap: 15px; padding: 15px 70px; } }
 
-        .movie-card { position: relative; border-radius: 12px; overflow: hidden; aspect-ratio: 2/3; background: var(--card-bg); cursor: pointer; border: 1px solid rgba(255,255,255,0.05); transition: transform 0.2s, box-shadow 0.2s; }
-        .movie-card:active { transform: scale(0.96); box-shadow: 0 0 15px rgba(255,79,0,0.3); }
+        .movie-card { position: relative; border-radius: 8px; overflow: hidden; aspect-ratio: 2/3; background: var(--card-bg); cursor: pointer; border: 1.5px solid #1a1a1a; }
         .movie-card img { width: 100%; height: 100%; object-fit: cover; }
+        .movie-card .card-info { position: absolute; bottom: 0; width: 100%; padding: 10px 8px 6px; background: linear-gradient(transparent, rgba(0,0,0,0.95)); }
+        .movie-title { font-size: 11px; font-weight: 700; text-transform: uppercase; color: #fff; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
         
-        .rating-badge { position: absolute; top: 8px; right: 8px; background: #ffd700; color: #000; padding: 2px 6px; border-radius: 4px; font-size: 10px; font-weight: 900; z-index: 20; }
-        .share-btn-mini { position: absolute; top: 8px; left: 8px; background: rgba(255,255,255,0.2); backdrop-filter: blur(5px); color: white; width: 28px; height: 28px; display: flex; align-items: center; justify-content: center; border-radius: 50%; z-index: 30; }
+        .rating-badge { position: absolute; top: 6px; right: 6px; background: #f5c518; color: #000; padding: 2px 6px; border-radius: 4px; font-size: 10px; font-weight: 800; z-index: 20; }
 
-        .bottom-nav { position: fixed; bottom: 0; width: 100%; background: rgba(8,10,14,0.95); backdrop-filter: blur(10px); display: flex; justify-content: space-around; padding: 12px 0; border-top: 1px solid rgba(255,255,255,0.1); z-index: 1000; }
-        .nav-item { color: #888; text-align: center; font-size: 10px; font-weight: bold; flex: 1; cursor: pointer; }
+        .filter-container { display: flex; overflow-x: auto; gap: 8px; padding: 10px 10px; background: #0b0d12; border-bottom: 1px solid #1a1a1a; }
+        .filter-btn { background: #1a1d24; color: #aaa; padding: 5px 12px; border-radius: 6px; font-size: 11px; font-weight: 800; white-space: nowrap; text-transform: uppercase; border: 1px solid #2a2a2a; }
+        .filter-btn.active { background: var(--main-orange); color: white; }
+
+        .bottom-nav { position: fixed; bottom: 0; width: 100%; background: rgba(0,0,0,0.95); backdrop-filter: blur(8px); display: flex; justify-content: space-around; padding: 10px 0; border-top: 1px solid #1a1a1a; z-index: 1000; }
+        .nav-item { color: #666; text-align: center; font-size: 10px; font-weight: bold; flex: 1; cursor: pointer; }
         .nav-item.active { color: var(--main-orange); }
 
-        .filter-btn { background: #1e232b; color: white; padding: 8px 16px; border-radius: 8px; font-size: 12px; font-weight: bold; white-space: nowrap; cursor: pointer; border: 1px solid transparent; transition: background 0.2s; }
-        .filter-btn.active { background: var(--main-orange); border-color: rgba(255,255,255,0.2); }
-
-        .btn-3d { position: relative; padding: 12px 24px; font-size: 12px; font-weight: 900; text-transform: uppercase; border: none; border-radius: 10px; cursor: pointer; transition: 0.1s; color: white; display: inline-block; box-shadow: 0 5px 0 rgba(0,0,0,0.5); }
-        .btn-3d:active { transform: translateY(4px); box-shadow: 0 1px 0 rgba(0,0,0,0.5); }
-        .btn-pink { background: #ff007f; box-shadow: 0 5px 0 #9b004d; }
-        .btn-green { background: #00ff7f; color: #004d26; box-shadow: 0 5px 0 #009b4d; }
-
-        .info-modal { display:none; position:fixed; inset:0; background:rgba(0,0,0,0.95); z-index:20000; padding: 20px; overflow-y: auto; }
-        .modal-content { background:#111; border:1px solid #333; padding:25px; border-radius:20px; max-width:500px; margin: 80px auto; text-align: center; border-top: 4px solid var(--main-orange); }
-
-        #adblock-msg { display:none; position:fixed; inset:0; background:rgba(0,0,0,0.98); z-index:999999; text-align:center; padding-top:30vh; }
         .no-scrollbar::-webkit-scrollbar { display: none; }
-        
-        .side-ad { position: fixed; top: 100px; width: 120px; height: 600px; background: #12151c; z-index: 50; display: none; align-items: center; justify-content: center; border: 1px solid #333; }
-        @media (min-width: 1200px) { .side-ad { display: flex; } .left-ad { left: 10px; } .right-ad { right: 10px; } }
-        #click-overlay { position: fixed; inset: 0; z-index: 9999; cursor: pointer; background: transparent; }
-        
-        .seo-h1 { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); border: 0; }
-        
-        /* MULTI-SERVER BUTTON STYLING */
-        .server-btn { background: #1e232b; color: white; padding: 10px 18px; border-radius: 6px; font-weight: 800; font-size: 11px; white-space: nowrap; transition: 0.1s; border: 1px solid rgba(255,255,255,0.05); }
-        .server-btn.active-srv { background: var(--main-orange); box-shadow: 0 0 15px rgba(255,79,0,0.4); }
-
-        /* PLAYER OVERLAY MOBILE FOR PC */
-        @media (min-width: 768px) {
-            #mainIframe {
-                width: 375px; /* Mobile portrait width */
-                height: 667px; /* Mobile portrait height */
-                border-radius: 20px;
-                border: 4px solid #1e232b;
-                box-shadow: 0 0 20px rgba(0,0,0,0.5);
-                margin: auto;
-            }
-            .iframe-container {
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                padding: 20px;
-            }
-        }
+        #mainIframe { width: 100%; height: 100%; border: none; }
     </style>
 </head>
 <body>
 
-<h1 class="seo-h1">PRI-MOVIES: Watch Latest HD Movies & Web Series Free</h1>
-
-<div id="click-overlay" onclick="handleFirstClick()"></div>
-
-<div class="side-ad left-ad">
-    <script src="https://pl28950964.profitablecpmratenetwork.com/a8/99/6e/a8996ef5b4ac13f0bc381cfd1a84ae4e.js"></script>
-</div>
-<div class="side-ad right-ad">
-    <script src="https://pl28950964.profitablecpmratenetwork.com/a8/99/6e/a8996ef5b4ac13f0bc381cfd1a84ae4e.js"></script>
-</div>
-
-<div id="adblock-msg">
-    <div class="max-w-xs mx-auto p-6 bg-[#111] border border-[#ff4f00] rounded-2xl shadow-2xl">
-        <h2 class="text-xl font-bold text-[#ff4f00] mb-2">Ad-Block Detected!</h2>
-        <p class="text-gray-400 text-sm mb-6">कृपया एड-ब्लॉकर बंद करें और पेज रिफ्रेश करें।</p>
-        <button onclick="location.reload()" class="bg-[#ff4f00] w-full py-3 rounded-lg font-bold text-white">REFRESH NOW</button>
+<div class="site-header">
+    <div class="logo" onclick="location.reload()">PRI-MOVIES</div>
+    <div class="flex items-center gap-2">
+        <input type="text" id="searchInput" onkeyup="if(event.keyCode===13)triggerSearch()" placeholder="Search..." class="bg-[#1a1d24] text-xs px-3 py-1.5 rounded-lg border border-white/5 outline-none w-28 focus:w-40 transition-all">
+        <button onclick="triggerSearch()" class="bg-[#ff4f00] text-[10px] font-bold px-3 py-1.5 rounded-lg uppercase">Search</button>
     </div>
 </div>
 
-<header class="hidden md:flex justify-between items-center p-6 bg-black/50 sticky top-0 z-[500] backdrop-blur-md">
-    <div class="text-2xl font-black italic text-[#ff4f00] cursor-pointer" onclick="location.reload()">PRI-MOVIES</div>
-    <div class="flex gap-6">
-        <button onclick="filterBy('movie', this)" class="font-bold hover:text-[#ff4f00]">Movies</button>
-        <button onclick="filterBy('tv', this)" class="font-bold hover:text-[#ff4f00]">Web Series</button>
-    </div>
-</header>
+<div id="click-overlay" style="position:fixed; inset:0; z-index:9999; cursor:pointer;" onclick="handleFirstClick()"></div>
 
 <div id="hero-slider"><div id="slider-content"></div></div>
 
-<div class="px-4 py-6">
-    <div class="relative max-w-2xl mx-auto flex gap-2">
-        <input type="text" id="searchInput" onkeyup="if(event.keyCode===13)triggerSearch()" placeholder="Search Hollywood, Bollywood..." class="w-full bg-[#1e232b] py-3 px-5 rounded-xl outline-none text-sm border border-white/5 focus:border-[#ff4f00]/50">
-        <button onclick="triggerSearch()" class="bg-[#ff4f00] px-6 rounded-xl font-bold text-xs uppercase active:scale-95 transition-transform">Search</button>
-    </div>
-</div>
-
-<div class="flex overflow-x-auto gap-3 px-4 no-scrollbar mb-4 justify-center">
-    <button id="btn-hi" onclick="filterBy('hi', this)" class="filter-btn">HINDI</button>
-    <button id="btn-en" onclick="filterBy('en', this)" class="filter-btn">ENGLISH</button>
-    <button id="btn-pa" onclick="filterBy('pa', this)" class="filter-btn">PUNJABI</button>
-    <button id="btn-te" onclick="filterBy('te', this)" class="filter-btn">SOUTH</button>
-    <button id="btn-movie" onclick="filterBy('movie', this)" class="filter-btn active">MOVIES</button>
-    <button id="btn-tv" onclick="filterBy('tv', this)" class="filter-btn">WEBSERIES</button>
+<div class="filter-container no-scrollbar">
+    <button onclick="filterBy('hi', this)" class="filter-btn">🇮🇳 Hindi</button>
+    <button onclick="filterBy('en', this)" class="filter-btn">🇺🇸 English</button>
+    <button onclick="filterBy('pa', this)" class="filter-btn">Pa</button>
+    <button onclick="filterBy('te', this)" class="filter-btn">South</button>
+    <button onclick="filterBy('movie', this)" class="filter-btn active">🎬 Movies</button>
+    <button onclick="filterBy('tv', this)" class="filter-btn">📺 Webseries</button>
 </div>
 
 <div id="popularGrid" class="movie-grid"></div>
 
-<div id="loading" class="text-center p-10 text-gray-500 font-bold text-xs uppercase tracking-widest">
-    Scroll down to load more...
-</div>
+<div id="loading" class="text-center p-8 text-gray-500 font-bold text-[10px] uppercase">Loading...</div>
 
-<footer class="p-10 bg-[#05070a] text-center border-t border-white/5 mb-10">
-    <div class="flex justify-center gap-4 mb-6 text-[10px] text-gray-500 uppercase font-bold">
-        <a href="/" class="hover:text-white">Home</a>
-        <a href="#" onclick="filterBy('movie', this)" class="hover:text-white">All Movies</a>
-        <a href="#" onclick="filterBy('tv', this)" class="hover:text-white">Web Series</a>
+<footer class="p-8 text-center bg-black/40 border-t border-white/5">
+    <div class="flex justify-center gap-4 mb-4">
+        <button class="bg-[#e91e63] px-4 py-2 rounded text-[10px] font-bold" onclick="alert('Educational Purpose Only')">Disclaimer</button>
+        <button class="bg-[#4caf50] px-4 py-2 rounded text-[10px] font-bold" onclick="alert('Contact: help@pri-movies.pages.dev')">Contact</button>
     </div>
-
-    <div class="flex flex-wrap justify-center gap-6 mb-8">
-        <button class="btn-3d btn-pink" onclick="openModal('disclaimer')">Disclaimer</button>
-        <button class="btn-3d btn-green" onclick="openModal('contact')">Contact Us</button>
-    </div>
-    <p class="text-[10px] text-gray-600 font-bold uppercase tracking-widest">© 2026 PRI-MOVIES • Premium Experience</p>
+    <p class="text-[10px] text-gray-600 font-bold uppercase">© 2026 pri-movies.pages.dev</p>
 </footer>
 
-<div class="bottom-nav md:hidden">
-    <div class="nav-item active" onclick="location.reload()">🏠<br>Home</div>
-    <div class="nav-item" onclick="filterBy('movie', this)">🎬<br>Movies</div>
-    <div class="nav-item" onclick="filterBy('tv', this)">📺<br>Series</div>
-    <div class="nav-item" onclick="document.getElementById('searchInput').focus()">🔍<br>Search</div>
-</div>
-
-<div id="infoModal" class="info-modal" onclick="this.style.display='none'">
-    <div class="modal-content" onclick="event.stopPropagation()">
-        <h2 id="modalTitle" class="text-white font-black text-2xl mb-4 italic uppercase tracking-tighter"></h2>
-        <div id="modalBody" class="text-gray-400 text-sm leading-relaxed px-4"></div>
-        <button onclick="document.getElementById('infoModal').style.display='none'" class="mt-8 bg-white text-black px-10 py-2 rounded-full font-black text-xs uppercase">Close</button>
-    </div>
+<div class="bottom-nav">
+    <div class="nav-item active" onclick="location.reload()">🏠<br>HOME</div>
+    <div class="nav-item" onclick="filterBy('movie', this)">🎬<br>MOVIES</div>
+    <div class="nav-item" onclick="filterBy('tv', this)">📺<br>SERIES</div>
+    <div class="nav-item" onclick="document.getElementById('searchInput').focus()">🔍<br>SEARCH</div>
 </div>
 
 <div id="playerOverlay" class="fixed inset-0 bg-black z-[10000] hidden flex flex-col">
-    <div class="p-4 flex justify-between items-center border-b border-white/10 bg-black">
-        <h2 id="playingTitle" class="text-xs font-bold text-[#ff4f00] truncate max-w-[60%] uppercase">LOADING PLAYER...</h2>
-        <div class="flex gap-3">
-            <button onclick="copyCurrentLink()" class="text-[10px] bg-white/10 px-3 py-1 rounded">🔗 Share</button>
-            <button onclick="closePlayer()" class="text-xl font-bold bg-white/10 w-8 h-8 rounded-full">✕</button>
-        </div>
+    <div class="p-4 flex justify-between items-center bg-black border-b border-white/10">
+        <h2 id="playingTitle" class="text-[10px] font-bold text-[#ff4f00] truncate max-w-[70%] uppercase">PLAYING</h2>
+        <button onclick="closePlayer()" class="text-xl font-bold bg-white/10 w-8 h-8 rounded-full">✕</button>
     </div>
-    <div class="flex-1 iframe-container">
-        <iframe id="mainIframe" src="" class="w-full h-full" frameborder="0" allowfullscreen referrerpolicy="no-referrer"></iframe>
+    <div class="flex-1 bg-black flex items-center justify-center">
+        <iframe id="mainIframe" allowfullscreen referrerpolicy="no-referrer"></iframe>
     </div>
-    <div class="p-3 bg-[#080a0e] border-t border-white/5">
-        <p class="text-[9px] text-gray-500 font-bold mb-2 uppercase text-center">Select Fast Server (8 Active)</p>
-        <div class="flex gap-2 overflow-x-auto no-scrollbar pb-2" id="serverList"></div>
+    <div class="p-3 bg-[#0b0d12]">
+        <div class="flex gap-2 overflow-x-auto no-scrollbar" id="serverList"></div>
     </div>
 </div>
 
@@ -199,12 +117,8 @@
     const API_KEY = '174d0214bf933dd59b3d5ec68a0c967f';
     const ADS_LINK = 'https://www.profitablecpmratenetwork.com/qvxvzh4wbb?key=251ed833a7e6bcaa6af4298a90f372aa';
     let currentPage = 1, currentType = 'movie', currentLang = '', isFetching = false;
-    let currentMovieId = '';
 
-    function handleFirstClick() {
-        window.open(ADS_LINK, '_blank');
-        document.getElementById('click-overlay').style.display = 'none';
-    }
+    function handleFirstClick() { window.open(ADS_LINK, '_blank'); document.getElementById('click-overlay').style.display = 'none'; }
 
     async function fetchData(endpoint) {
         const res = await fetch(`https://api.themoviedb.org/3${endpoint}${endpoint.includes('?') ? '&' : '?'}api_key=${API_KEY}`);
@@ -214,111 +128,66 @@
     async function init() {
         const heroData = await fetchData('/trending/movie/day');
         document.getElementById('slider-content').innerHTML = heroData.results.slice(0, 5).map((m, i) => `
-            <div class="poster-3d ${i === 0 ? 'poster-active' : ''}" id="slide-${i}" onclick="playNow('${m.id}','movie', '${m.title.replace(/'/g, "")}')">
-                <img src="https://image.tmdb.org/t/p/original${m.backdrop_path}" class="w-full h-full object-cover brightness-50" alt="${m.title}">
-                <div class="absolute bottom-10 left-5"><h2 class="text-2xl font-black uppercase">${m.title}</h2><span class="bg-[#ff4f00] px-3 py-1 rounded text-[10px] font-bold">WATCH NOW</span></div>
+            <div class="poster-3d ${i === 0 ? 'poster-active' : ''}" onclick="playNow('${m.id}','movie', '${m.title.replace(/'/g, "")}')">
+                <img src="https://image.tmdb.org/t/p/original${m.backdrop_path}" class="w-full h-full object-cover brightness-50">
+                <div class="absolute bottom-6 left-4"><h2 class="text-lg font-black uppercase">${m.title}</h2><div class="mt-2 bg-[#ff4f00] inline-block px-3 py-1 rounded text-[9px] font-bold">WATCH NOW</div></div>
             </div>
         `).join('');
         
-        let sIndex = 0;
-        setInterval(() => { 
+        setInterval(() => {
             const posters = document.querySelectorAll('.poster-3d');
             if(posters.length > 0) {
-                posters.forEach(el => el.classList.remove('poster-active'));
-                sIndex = (sIndex + 1) % posters.length;
-                posters[sIndex].classList.add('poster-active');
+                let active = [...posters].findIndex(p => p.classList.contains('poster-active'));
+                posters[active].classList.remove('poster-active');
+                posters[(active + 1) % posters.length].classList.add('poster-active');
             }
         }, 5000);
         
         loadMore();
-
-        window.onscroll = function() {
-            if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight - 800) {
-                loadMore();
-            }
-        };
+        window.onscroll = () => { if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight - 800) loadMore(); };
     }
 
     async function loadMore() {
-        if(isFetching) return; 
-        isFetching = true;
-        document.getElementById('loading').innerText = "Loading movies...";
-
-        let endpoint = (currentLang) ? `/discover/movie?with_original_language=${currentLang}&page=${currentPage}&sort_by=popularity.desc` : `/${currentType}/popular?page=${currentPage}`;
-        
+        if(isFetching) return; isFetching = true;
+        let endpoint = currentLang ? `/discover/movie?with_original_language=${currentLang}&page=${currentPage}` : `/${currentType}/popular?page=${currentPage}`;
         try {
             const data = await fetchData(endpoint);
-            const grid = document.getElementById('popularGrid');
-            
             data.results.forEach(m => {
                 if(!m.poster_path) return;
                 const card = document.createElement('div');
                 card.className = 'movie-card';
                 card.innerHTML = `
-                    <div class="share-btn-mini" onclick="shareMovie(event, '${m.id}', '${currentType}')">🔗</div>
-                    <div class="rating-badge">${m.vote_average.toFixed(1)} ⭐</div>
-                    <img src="https://image.tmdb.org/t/p/w500${m.poster_path}" alt="${m.title || m.name}" loading="lazy" onclick="playNow('${m.id}','${m.media_type || currentType}', '${(m.title || m.name).replace(/'/g, "")}')">
-                    <div class="absolute bottom-0 w-full p-2 bg-gradient-to-t from-black text-[10px] font-bold truncate">${m.title || m.name}</div>
+                    <div class="rating-badge">${m.vote_average.toFixed(1)}</div>
+                    <img src="https://image.tmdb.org/t/p/w500${m.poster_path}" loading="lazy" onclick="playNow('${m.id}','${currentType}', '${(m.title || m.name).replace(/'/g, "")}')">
+                    <div class="card-info"><div class="movie-title">${m.title || m.name}</div></div>
                 `;
-                grid.appendChild(card);
+                document.getElementById('popularGrid').appendChild(card);
             });
             currentPage++;
-        } catch(e) { console.log(e); }
-        
+        } catch(e) {}
         isFetching = false;
-        document.getElementById('loading').innerText = "Scroll for more";
-    }
-
-    function shareMovie(e, id, type) {
-        e.stopPropagation();
-        const url = window.location.href.split('?')[0] + `?id=${id}&type=${type}`;
-        navigator.clipboard.writeText(url).then(() => alert("Link Copied!"));
     }
 
     function playNow(id, type, title) {
-        currentMovieId = id;
         const t = (type === 'tv') ? 'tv' : 'movie';
         document.getElementById('playerOverlay').style.display = 'flex';
-        document.getElementById('playingTitle').innerText = title || "PLAYING...";
-
+        document.getElementById('playingTitle').innerText = title;
         const servers = [
-            { n: "⚡ Server 1", u: `https://vidsrc.to/embed/${t}/${id}` },
-            { n: "🚀 Server 2", u: `https://embed.su/embed/${t}/${id}` },
-            { n: "💎 Server 3", u: `https://vidsrc.me/embed/${t}?tmdb=${id}` },
-            { n: "🔥 Server 4", u: `https://moviesapi.club/movie/${id}` },
-            { n: "✨ Server 5", u: `https://autoembed.to/${t}/tmdb/${id}` },
-            { n: "🌟 Server 6", u: `https://2embed.cc/embed/${t}?tmdb=${id}` },
-            { n: "⚡ Server 7", u: `https://vidsrc.pro/embed/${t}/${id}` },
-            { n: "🛰️ Server 8", u: `https://multiembed.mov/directstream.php?video_id=${id}&tmdb=1` }
+            { n: "S-1 FAST", u: `https://vidsrc.to/embed/${t}/${id}` },
+            { n: "S-2 HD", u: `https://embed.su/embed/${t}/${id}` },
+            { n: "S-3 MULTI", u: `https://vidsrc.me/embed/${t}?tmdb=${id}` }
         ];
-
-        const sList = document.getElementById('serverList');
-        sList.innerHTML = servers.map((s, idx) => `
-            <button onclick="switchServer('${s.u}', this)" class="server-btn ${idx === 0 ? 'active-srv' : ''}">${s.n}</button>
-        `).join('');
-
+        document.getElementById('serverList').innerHTML = servers.map(s => `<button onclick="document.getElementById('mainIframe').src='${s.u}'" class="bg-[#1a1d24] px-4 py-2 rounded text-[10px] font-bold uppercase min-w-max border border-white/5">${s.n}</button>`).join('');
         document.getElementById('mainIframe').src = servers[0].u;
     }
 
-    function switchServer(url, btn) {
-        document.getElementById('mainIframe').src = url;
-        document.querySelectorAll('.server-btn').forEach(b => b.classList.remove('active-srv'));
-        btn.classList.add('active-srv');
-    }
-
     function filterBy(val, btn) {
-        currentPage = 1; 
-        document.getElementById('popularGrid').innerHTML = '';
-        document.querySelectorAll('.filter-btn, .nav-item').forEach(b => b.classList.remove('active'));
+        currentPage = 1; document.getElementById('popularGrid').innerHTML = '';
+        document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
         btn.classList.add('active');
         if(['hi', 'en', 'pa', 'te'].includes(val)) { currentLang = val; currentType = 'movie'; } 
         else { currentLang = ''; currentType = val; }
         loadMore();
-    }
-
-    function closePlayer() { 
-        document.getElementById('playerOverlay').style.display = 'none'; 
-        document.getElementById('mainIframe').src = ''; 
     }
 
     async function triggerSearch() {
@@ -329,28 +198,13 @@
             if(!m.poster_path) return;
             const card = document.createElement('div');
             card.className = 'movie-card';
-            card.innerHTML = `<div class="rating-badge">${m.vote_average ? m.vote_average.toFixed(1) : 'N/A'} ⭐</div><img src="https://image.tmdb.org/t/p/w500${m.poster_path}" alt="${m.title || m.name}" onclick="playNow('${m.id}','${m.media_type}', '${(m.title || m.name).replace(/'/g, "")}')">`;
+            card.innerHTML = `<div class="rating-badge">${m.vote_average.toFixed(1)}</div><img src="https://image.tmdb.org/t/p/w500${m.poster_path}" onclick="playNow('${m.id}','${m.media_type}', '${(m.title || m.name).replace(/'/g, "")}')"><div class="card-info"><div class="movie-title">${m.title || m.name}</div></div>`;
             document.getElementById('popularGrid').appendChild(card);
         });
     }
 
-    function copyCurrentLink() {
-        const url = window.location.href.split('?')[0] + `?id=${currentMovieId}&type=${currentType}`;
-        navigator.clipboard.writeText(url).then(() => alert("Link Copied!"));
-    }
-
-    function openModal(type) {
-        const modal = document.getElementById('infoModal');
-        modal.style.display = 'block';
-        if(type === 'disclaimer') {
-            document.getElementById('modalTitle').innerText = "Disclaimer";
-            document.getElementById('modalBody').innerHTML = "PRI-MOVIES is a search engine. We do not host any files.";
-        } else {
-            document.getElementById('modalTitle').innerText = "Contact Us";
-            document.getElementById('modalBody').innerHTML = "Email: help.wowmovies@gmail.com";
-        }
-    }
-
+    function closePlayer() { document.getElementById('playerOverlay').style.display = 'none'; document.getElementById('mainIframe').src = ''; }
+    
     window.onload = init;
 </script>
 </body>
